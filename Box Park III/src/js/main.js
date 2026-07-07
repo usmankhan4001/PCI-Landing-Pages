@@ -1,8 +1,10 @@
 // Header scroll state
 const header = document.getElementById('siteHeader');
+const stickyWhatsApp = document.querySelector('.sticky-whatsapp');
 const onScroll = () => {
   if (window.scrollY > 40) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
+  if (stickyWhatsApp) stickyWhatsApp.classList.toggle('show', window.scrollY > window.innerHeight * 0.65);
 };
 window.addEventListener('scroll', onScroll);
 onScroll();
