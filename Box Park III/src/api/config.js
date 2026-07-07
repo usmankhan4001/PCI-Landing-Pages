@@ -6,5 +6,6 @@ module.exports = (req, res) => {
   res.status(200).json({
     pixelId: process.env.META_PIXEL_ID || null,
     ga4Id: process.env.GA4_MEASUREMENT_ID || null,
+    salesWhatsAppNumber: process.env.SALES_WHATSAPP_NUMBER || "923011233333",
   });
 };

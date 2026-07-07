@@ -7,6 +7,20 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 onScroll();
 
+// Mobile navigation
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuToggle && mobileMenu) {
+  const setMenu = (open) => {
+    menuToggle.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+  };
+  menuToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+  mobileMenu.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+}
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach((item) => {
   const q = item.querySelector('.faq-q');
@@ -167,6 +181,40 @@ if (planLightbox && lightboxStage && lightboxImg && fpZoom) {
 // hardcoded per-environment. Silently does nothing if /api isn't deployed
 // (e.g. when previewing this file standalone).
 let metaPixelReady = false;
+let salesWhatsAppNumber = '923011233333';
+
+function getCookie(name) {
+  return document.cookie
+    .split('; ')
+    .find((row) => row.startsWith(`${name}=`))
+    ?.split('=')[1];
+}
+
+function getAttributionData() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    pageUrl: window.location.href,
+    pageTitle: document.title,
+    referrer: document.referrer || '',
+    fbp: getCookie('_fbp') || '',
+    fbc: getCookie('_fbc') || '',
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_content: params.get('utm_content') || '',
+    utm_term: params.get('utm_term') || '',
+  };
+}
+
+function updateWhatsAppLinks(number) {
+  const clean = String(number || '').replace(/[^\d]/g, '');
+  if (!clean) return;
+  salesWhatsAppNumber = clean;
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
+    link.href = `https://wa.me/${clean}`;
+  });
+}
+
 (async () => {
   let config;
   try {
@@ -174,6 +222,8 @@ let metaPixelReady = false;
   } catch {
     return; // no backend available (e.g. static preview) — skip tracking setup
   }
+
+  if (config.salesWhatsAppNumber) updateWhatsAppLinks(config.salesWhatsAppNumber);
 
   if (config.pixelId) {
     /* eslint-disable */
@@ -218,22 +268,44 @@ let metaPixelReady = false;
 function wireLeadForm(formId, wrapId, successId) {
   const form = document.getElementById(formId);
   if (!form) return;
+  const submit = form.querySelector('[type="submit"]');
+  const error = document.createElement('div');
+  error.className = 'form-error';
+  form.appendChild(error);
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    error.classList.remove('show');
+    error.textContent = '';
+    if (submit) {
+      submit.disabled = true;
+      submit.dataset.originalText = submit.textContent;
+      submit.textContent = 'Sending...';
+    }
+
     const data = Object.fromEntries(new FormData(form).entries());
-    const eventId = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now());
+    const eventId = (window.crypto?.randomUUID && window.crypto.randomUUID()) || String(Date.now());
+    const payload = { ...data, ...getAttributionData(), eventId };
 
     if (metaPixelReady) fbq('track', 'Lead', {}, { eventID: eventId });
     if (window.gtag) gtag('event', 'generate_lead', { interest: data.interest, budget: data.budget });
 
     try {
-      await fetch('/api/lead', {
+      const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, eventId }),
+        body: JSON.stringify(payload),
       });
+      if (!res.ok) throw new Error('Lead API returned an error');
     } catch (err) {
       console.error('Lead submission failed:', err);
+      error.textContent = `We could not submit the form. Please WhatsApp us directly at +${salesWhatsAppNumber}.`;
+      error.classList.add('show');
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = submit.dataset.originalText || 'Submit';
+      }
+      return;
     }
 
     document.getElementById(wrapId).style.display = 'none';

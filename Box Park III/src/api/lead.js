@@ -20,6 +20,10 @@ function sha256(value) {
   return crypto.createHash("sha256").update(String(value).trim().toLowerCase()).digest("hex");
 }
 
+function cleanPhone(value) {
+  return String(value || "").replace(/[^\d]/g, "");
+}
+
 async function sendMetaCAPI(lead, eventId, req) {
   if (!process.env.META_PIXEL_ID || !process.env.META_CAPI_ACCESS_TOKEN) return { skipped: true };
 
@@ -31,17 +35,20 @@ async function sendMetaCAPI(lead, eventId, req) {
         event_time: Math.floor(Date.now() / 1000),
         event_id: eventId, // must match the client-side fbq eventID for dedup
         action_source: "website",
-        event_source_url: req.headers.referer || "",
+        event_source_url: lead.pageUrl || req.headers.referer || "",
         user_data: {
           client_ip_address: req.headers["x-forwarded-for"]?.split(",")[0]?.trim(),
           client_user_agent: req.headers["user-agent"],
-          ph: lead.phone ? [sha256(lead.phone.replace(/[^\d]/g, ""))] : undefined,
+          fbp: lead.fbp || undefined,
+          fbc: lead.fbc || undefined,
+          ph: lead.phone ? [sha256(cleanPhone(lead.phone))] : undefined,
           fn: lead.name ? [sha256(lead.name.split(" ")[0])] : undefined,
         },
         custom_data: {
           content_name: "Box Park III Lead Form",
           interest: lead.interest,
           budget: lead.budget,
+          lead_source: lead.utm_source || "website",
         },
       },
     ],
@@ -68,9 +75,20 @@ async function sendBitrixLead(lead) {
         TITLE: `Box Park III — ${lead.name}`,
         NAME: lead.name,
         PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "WORK" }],
-        COMMENTS: `Interested in: ${lead.interest}\nBudget: ${lead.budget}\nMessage: ${lead.message || "-"}`,
+        COMMENTS:
+          `Interested in: ${lead.interest || "-"}\n` +
+          `Budget: ${lead.budget || "-"}\n` +
+          `Requested: ${lead.want || "-"}\n` +
+          `Message: ${lead.message || "-"}\n` +
+          `Page: ${lead.pageUrl || "-"}\n` +
+          `Referrer: ${lead.referrer || "-"}`,
         SOURCE_ID: "WEB",
         SOURCE_DESCRIPTION: "Box Park III Landing Page",
+        UTM_SOURCE: lead.utm_source || undefined,
+        UTM_MEDIUM: lead.utm_medium || undefined,
+        UTM_CAMPAIGN: lead.utm_campaign || undefined,
+        UTM_CONTENT: lead.utm_content || undefined,
+        UTM_TERM: lead.utm_term || undefined,
       },
     }),
   });
@@ -85,9 +103,12 @@ async function sendWahaNotification(lead) {
     `New Box Park III lead\n` +
     `Name: ${lead.name}\n` +
     `Phone: ${lead.phone}\n` +
-    `Interested in: ${lead.interest}\n` +
-    `Budget: ${lead.budget}\n` +
-    `Message: ${lead.message || "-"}`;
+    `Interested in: ${lead.interest || "-"}\n` +
+    `Budget: ${lead.budget || "-"}\n` +
+    `Requested: ${lead.want || "-"}\n` +
+    `Message: ${lead.message || "-"}\n` +
+    `UTM: ${lead.utm_source || "direct"} / ${lead.utm_campaign || "-"}\n` +
+    `Page: ${lead.pageUrl || "-"}`;
 
   const res = await fetch(url, {
     method: "POST",
