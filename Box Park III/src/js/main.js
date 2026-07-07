@@ -12,6 +12,7 @@ const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 if (menuToggle && mobileMenu) {
   const setMenu = (open) => {
+    mobileMenu.hidden = !open;
     menuToggle.classList.toggle('open', open);
     mobileMenu.classList.toggle('open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
@@ -19,6 +20,7 @@ if (menuToggle && mobileMenu) {
   menuToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
   mobileMenu.querySelectorAll('a, button').forEach((item) => item.addEventListener('click', () => setMenu(false)));
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1120) setMenu(false); });
 }
 
 // FAQ accordion
