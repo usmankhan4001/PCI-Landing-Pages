@@ -23,6 +23,15 @@ if (menuToggle && mobileMenu) {
   window.addEventListener('resize', () => { if (window.innerWidth > 1120) setMenu(false); });
 }
 
+// Paid-traffic order: keep all content, but surface pricing/payment/lead capture earlier.
+const trustBar = document.querySelector('.trust-bar');
+const pricingSection = document.getElementById('pricing');
+const paymentSection = document.getElementById('payment-plan');
+const quickLeadSection = document.getElementById('quick-lead');
+if (trustBar && pricingSection && paymentSection && quickLeadSection) {
+  trustBar.after(pricingSection, paymentSection, quickLeadSection);
+}
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach((item) => {
   const q = item.querySelector('.faq-q');
@@ -270,6 +279,8 @@ function updateWhatsAppLinks(number) {
 function wireLeadForm(formId, wrapId, successId) {
   const form = document.getElementById(formId);
   if (!form) return;
+  const wrap = wrapId ? document.getElementById(wrapId) : form;
+  const success = document.getElementById(successId);
   const submit = form.querySelector('[type="submit"]');
   const error = document.createElement('div');
   error.className = 'form-error';
@@ -310,10 +321,11 @@ function wireLeadForm(formId, wrapId, successId) {
       return;
     }
 
-    document.getElementById(wrapId).style.display = 'none';
-    document.getElementById(successId).classList.add('show');
+    if (wrap) wrap.style.display = 'none';
+    if (success) success.classList.add('show');
   });
 }
+wireLeadForm('quickLeadForm', null, 'quickLeadSuccess');
 wireLeadForm('leadForm', 'leadFormWrap', 'formSuccess');
 wireLeadForm('modalLeadForm', 'modalFormWrap', 'modalFormSuccess');
 
