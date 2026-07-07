@@ -1,0 +1,15 @@
+{
+  "name": "boxpark3-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Box Park III landing page — static site + lead API (Meta CAPI, Bitrix24, WAHA)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

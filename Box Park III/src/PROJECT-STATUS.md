@@ -109,7 +109,7 @@ supports serverless functions (Vercel, Netlify, etc.).
 | 6 | Pricing table | Done — real rates from the flyer, maroon header, standout styling |
 | 7 | Payment plan | Done |
 | 8 | Gallery | Done — grid bug (empty tile) fixed |
-| 9 | Floor & unit breakdown | **Partial** — real render + click-to-view mechanism built; needs real floor-plan PNGs from client to replace "coming soon" placeholders |
+| 9 | Floor & unit breakdown | Done — real render + click-to-view mechanism, wired to the client's actual floor-plan layouts (converted from `docs/Layout Plans/*.png`) |
 | 10 | Investment benefits | Done |
 | 11 | Developer credibility | **Partial** — portfolio row built as image-ready "logo chips" with graceful text fallback; needs real logo files from client (5 logos were pasted inline in chat, which doesn't give file access — need actual file attachments) |
 | 12 | Why Premier Choice | Done |
@@ -131,13 +131,17 @@ near-black ink, warm paper/stone neutrals. No invented accent colors.
 1. **Portfolio logos** (Box Park I/II, River Hills, River Courtyard, Grand
    Orchard, 68 High Street, Buraq Heights, Grand Gallery — exact list
    still to be confirmed against what the client actually sent) — need
-   these as **file attachments**, not pasted inline.
-2. **Floor plan PNGs** — one per level (Ground‑01, Ground‑02, Mezzanine,
-   1st, 2nd, 3rd) — same, need actual file attachments.
-3. **GitHub repo access** — client needs to grant this session access to
-   `PCI-Landing-Pages` from the claude.ai side (not GitHub's own App
-   installation settings — confirmed the client has none there). Until
-   then, delivery is via direct file handoff (this zip).
+   these as **file attachments**. Checked the full repo (`img/`, `docs/`,
+   `assets/`, `archive/`) — no logo files exist anywhere yet, only the
+   `img/logos/*.png` references in `index.html` with a text-chip fallback.
+2. ~~Floor plan PNGs~~ — **received and wired in.** Client's 6 layout-plan
+   pages (`docs/Layout Plans/Layout BP 3 - _Page_1‑6.png`) were converted
+   to web-sized JPGs at `src/img/floorplans/{ground-01,ground-02,
+   mezzanine,1st-floor,2nd-floor,3rd-floor}.jpg` and match the click zones
+   already built into the floor & unit breakdown section exactly.
+3. ~~GitHub repo access~~ — **resolved.** `origin` is
+   `https://github.com/usmankhan4001/PCI-Landing-Pages.git` and the repo
+   has commits (init, source, assets, archive, docs) as of 2026‑07‑06/07.
 4. **Hosting decision** — recommended Vercel (static site + serverless
    functions in one deploy, free tier, plugs directly into a GitHub repo
    once connected) but not yet confirmed by the client.

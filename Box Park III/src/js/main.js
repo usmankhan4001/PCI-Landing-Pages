@@ -17,46 +17,151 @@ document.querySelectorAll('.faq-item').forEach((item) => {
   });
 });
 
-// Floor plan panel: click a floor on the render, show its plan on the side.
-// data-plan images don't exist yet (placeholder paths) — falls back to a
-// text placeholder via onerror until real floor plan PNGs are dropped in.
+// Location map + distance list: reveal together on scroll into view.
+const locationGrid = document.querySelector('.location-grid');
+const mapCard = document.querySelector('.map-card');
+const distanceList = document.querySelector('.distance-list');
+if (locationGrid && mapCard && distanceList) {
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        mapCard.classList.add('in-view');
+        distanceList.classList.add('in-view');
+        obs.unobserve(locationGrid);
+      }
+    });
+  }, { threshold: 0.25 }).observe(locationGrid);
+}
+
+// Floor plan panel: match its height to the render photo beside it.
+const elevationPhoto = document.querySelector('.elevation-photo');
+const floorPlanPanel = document.querySelector('.floor-plan-panel');
+if (elevationPhoto && floorPlanPanel) {
+  const syncPanelHeight = () => {
+    if (window.innerWidth < 980) {
+      floorPlanPanel.style.height = '';
+    } else {
+      floorPlanPanel.style.height = `${elevationPhoto.offsetHeight}px`;
+    }
+  };
+  new ResizeObserver(syncPanelHeight).observe(elevationPhoto);
+  window.addEventListener('resize', syncPanelHeight);
+}
+
+// Floor plan widget: floor tabs + render zones both drive the same plan panel.
 const fpEmpty = document.getElementById('fpEmpty');
 const fpContent = document.getElementById('fpContent');
 const fpImageWrap = document.getElementById('fpImageWrap');
 const fpLvl = document.getElementById('fpLvl');
 const fpUse = document.getElementById('fpUse');
-document.querySelectorAll('.elev-zone[data-floor]').forEach((floor) => {
-  floor.addEventListener('click', () => {
-    document.querySelectorAll('.elev-zone.active').forEach((f) => f.classList.remove('active'));
-    floor.classList.add('active');
+const floorTriggers = document.querySelectorAll('.elev-zone[data-floor], .floor-tab[data-floor]');
 
-    fpLvl.textContent = floor.dataset.floor.replace(/&#8209;/g, '‑');
-    fpUse.textContent = floor.dataset.use;
+function selectFloor(floorKey, { scroll } = {}) {
+  const matches = document.querySelectorAll(`[data-floor="${CSS.escape(floorKey)}"]`);
+  if (!matches.length) return;
+  const source = matches[0];
 
-    const planSrc = floor.dataset.plan;
-    fpImageWrap.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = planSrc;
-    img.alt = `${floor.dataset.floor} layout plan`;
-    img.onerror = () => {
-      fpImageWrap.innerHTML = `<div class="fp-placeholder">Layout plan for ${floor.dataset.floor.replace(/&#8209;/g, '‑')} coming soon.</div>`;
-    };
-    fpImageWrap.appendChild(img);
+  floorTriggers.forEach((el) => el.classList.toggle('active', el.dataset.floor === floorKey));
 
-    fpEmpty.hidden = true;
-    fpContent.hidden = false;
-  });
+  fpLvl.textContent = floorKey.replace(/&#8209;/g, '‑');
+  fpUse.textContent = source.dataset.use;
+
+  const planSrc = source.dataset.plan;
+  fpImageWrap.innerHTML = '';
+  const img = document.createElement('img');
+  img.src = planSrc;
+  img.alt = `${floorKey} layout plan`;
+  img.onerror = () => {
+    fpImageWrap.innerHTML = `<div class="fp-placeholder">Layout plan for ${floorKey.replace(/&#8209;/g, '‑')} coming soon.</div>`;
+  };
+  fpImageWrap.appendChild(img);
+  fpImageWrap.dataset.planSrc = planSrc;
+  fpImageWrap.dataset.planAlt = img.alt;
+
+  fpEmpty.hidden = true;
+  fpContent.hidden = false;
+
+  if (scroll && window.innerWidth < 980) {
+    document.querySelector('.floor-plan-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+floorTriggers.forEach((el) => {
+  el.addEventListener('click', () => selectFloor(el.dataset.floor, { scroll: true }));
 });
 
-// Map routes: tap-to-activate for touch devices (hover doesn't work reliably on mobile)
-document.querySelectorAll('.map-route').forEach((route) => {
-  route.addEventListener('click', (e) => {
+const initialFloor = document.querySelector('.elev-zone.active, .floor-tab.active');
+if (initialFloor) selectFloor(initialFloor.dataset.floor);
+
+// Floor plan lightbox: click the plan to open a zoomable, pannable fullscreen view.
+const planLightbox = document.getElementById('planLightbox');
+const lightboxStage = document.getElementById('lightboxStage');
+const lightboxImg = document.getElementById('lightboxImg');
+const fpZoom = document.getElementById('fpZoom');
+if (planLightbox && lightboxStage && lightboxImg && fpZoom) {
+  let scale = 1, panX = 0, panY = 0, dragging = false, lastX = 0, lastY = 0;
+
+  const applyTransform = () => {
+    lightboxImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+  };
+  const resetTransform = () => { scale = 1; panX = 0; panY = 0; applyTransform(); };
+
+  const openLightbox = () => {
+    if (!fpImageWrap.dataset.planSrc) return;
+    lightboxImg.src = fpImageWrap.dataset.planSrc;
+    lightboxImg.alt = fpImageWrap.dataset.planAlt || '';
+    resetTransform();
+    planLightbox.classList.add('open');
+    planLightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  fpZoom.addEventListener('click', openLightbox);
+  fpImageWrap.addEventListener('click', () => { if (fpImageWrap.querySelector('img')) openLightbox(); });
+
+  lightboxStage.addEventListener('wheel', (e) => {
     e.preventDefault();
-    const wasActive = route.classList.contains('active');
-    document.querySelectorAll('.map-route.active').forEach((r) => r.classList.remove('active'));
-    if (!wasActive) route.classList.add('active');
+    const delta = e.deltaY > 0 ? -0.15 : 0.15;
+    scale = Math.min(4, Math.max(1, scale + delta));
+    if (scale === 1) { panX = 0; panY = 0; }
+    applyTransform();
+  }, { passive: false });
+
+  lightboxStage.addEventListener('mousedown', (e) => {
+    if (scale === 1) return;
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    lightboxStage.classList.add('grabbing');
   });
-});
+  window.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    panX += e.clientX - lastX; panY += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    applyTransform();
+  });
+  window.addEventListener('mouseup', () => { dragging = false; lightboxStage.classList.remove('grabbing'); });
+
+  let pinchDist = null;
+  lightboxStage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      pinchDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    } else if (e.touches.length === 1 && scale > 1) {
+      dragging = true; lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+  lightboxStage.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && pinchDist !== null) {
+      const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      scale = Math.min(4, Math.max(1, scale * (dist / pinchDist)));
+      pinchDist = dist;
+      if (scale === 1) { panX = 0; panY = 0; }
+      applyTransform();
+    } else if (e.touches.length === 1 && dragging) {
+      panX += e.touches[0].clientX - lastX; panY += e.touches[0].clientY - lastY;
+      lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
+      applyTransform();
+    }
+  }, { passive: true });
+  lightboxStage.addEventListener('touchend', () => { dragging = false; pinchDist = null; });
+}
 
 // --- Meta Pixel + GA4: loaded dynamically from /api/config so no IDs are
 // hardcoded per-environment. Silently does nothing if /api isn't deployed

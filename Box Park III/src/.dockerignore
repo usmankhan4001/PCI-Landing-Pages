@@ -1,0 +1,7 @@
+node_modules
+.env
+.env.*
+!.env.example
+PROJECT-STATUS.md
+DISCUSSION-LOG.md
+.git
