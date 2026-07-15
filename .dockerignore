@@ -1,0 +1,21 @@
+node_modules
+npm-debug.log
+.DS_Store
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+Box Park III
+Renders
+TECHNO ONE ALL ASSETS
+logos
+scratch
+WhatsApp*.jpeg
+Techno_One_Payment Plan.xlsx
+Techno_One_Brochure_Copy_Revision..docx
+Techno_One_Brochure_Copy.docx
+Tehcno Flyer.pdf
+commercial_real_estate_landing_page_structure.docx
+Techno One Landing Page chat.txt
