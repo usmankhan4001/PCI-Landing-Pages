@@ -9,6 +9,8 @@
 //   META_CAPI_ACCESS_TOKEN     - Meta Conversions API access token (secret)
 //   META_TEST_EVENT_CODE       - optional, only while testing in Events Manager
 //   BITRIX_WEBHOOK_URL         - Bitrix24 inbound webhook base URL with crm.lead.add rights (secret)
+//   BITRIX_UF_MAPPING          - optional JSON mapping Bitrix24 UF fields to lead data keys
+//                                e.g. {"UF_CRM_BUDGET":"budget","UF_CRM_INTEREST":"interest"}
 //   WAHA_BASE_URL              - e.g. https://your-waha-instance.example.com
 //   WAHA_SESSION               - WAHA session name (e.g. "default")
 //   WAHA_API_KEY               - WAHA instance API key, if configured (secret)
@@ -42,6 +44,7 @@ async function sendMetaCAPI(lead, eventId, req) {
           fbp: lead.fbp || undefined,
           fbc: lead.fbc || undefined,
           ph: lead.phone ? [sha256(cleanPhone(lead.phone))] : undefined,
+          em: lead.email ? [sha256(lead.email)] : undefined,
           fn: lead.name ? [sha256(lead.name.split(" ")[0])] : undefined,
         },
         custom_data: {
@@ -63,33 +66,66 @@ async function sendMetaCAPI(lead, eventId, req) {
   return res.json();
 }
 
+function parseWant(want) {
+  if (!want) return { request: "-", preferences: null };
+  const prefIdx = want.indexOf("(Preferences:");
+  if (prefIdx === -1) return { request: want.trim(), preferences: null };
+  return {
+    request: want.slice(0, prefIdx).trim(),
+    preferences: want.slice(prefIdx + 13, -1).trim(),
+  };
+}
+
 async function sendBitrixLead(lead) {
   if (!process.env.BITRIX_WEBHOOK_URL) return { skipped: true };
 
   const url = `${process.env.BITRIX_WEBHOOK_URL.replace(/\/$/, "")}/crm.lead.add.json`;
+
+  const { request, preferences } = parseWant(lead.want);
+
+  let comments = "";
+  if (lead.interest) comments += `Interest: ${lead.interest}\n`;
+  if (request !== "-") comments += `Request: ${request}\n`;
+  if (preferences) comments += `Preferences: ${preferences}\n`;
+  if (lead.budget) comments += `Budget: ${lead.budget}\n`;
+  if (lead.message) comments += `Message: ${lead.message}\n`;
+  if (lead.pageUrl) comments += `Source: ${lead.pageUrl}\n`;
+  if (lead.referrer && lead.referrer !== lead.pageUrl) comments += `Referrer: ${lead.referrer}`;
+
+  const fields = {
+    TITLE: `Techno One — ${lead.name}`,
+    NAME: lead.name,
+    PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "MOBILE" }],
+    EMAIL: lead.email ? [{ VALUE: lead.email, VALUE_TYPE: "WORK" }] : undefined,
+    COMMENTS: comments.trim(),
+    SOURCE_ID: "WEB",
+    SOURCE_DESCRIPTION: "Techno One Landing Page",
+    UTM_SOURCE: lead.utm_source || undefined,
+    UTM_MEDIUM: lead.utm_medium || undefined,
+    UTM_CAMPAIGN: lead.utm_campaign || undefined,
+    UTM_CONTENT: lead.utm_content || undefined,
+    UTM_TERM: lead.utm_term || undefined,
+  };
+
+  // Merge custom UF fields from BITRIX_UF_MAPPING env var
+  if (process.env.BITRIX_UF_MAPPING) {
+    try {
+      const mapping = JSON.parse(process.env.BITRIX_UF_MAPPING);
+      for (const [ufCode, dataKey] of Object.entries(mapping)) {
+        const val = lead[dataKey];
+        if (val !== undefined && val !== null && val !== "") {
+          fields[ufCode] = val;
+        }
+      }
+    } catch (_) {
+      // silently ignore invalid JSON
+    }
+  }
+
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      fields: {
-        TITLE: `Techno One — ${lead.name}`,
-        NAME: lead.name,
-        PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "WORK" }],
-        COMMENTS:
-          `Interested in: ${lead.interest || "-"}\n` +
-          `Requested: ${lead.want || "-"}\n` +
-          `Message: ${lead.message || "-"}\n` +
-          `Page: ${lead.pageUrl || "-"}\n` +
-          `Referrer: ${lead.referrer || "-"}`,
-        SOURCE_ID: "WEB",
-        SOURCE_DESCRIPTION: "Techno One Landing Page",
-        UTM_SOURCE: lead.utm_source || undefined,
-        UTM_MEDIUM: lead.utm_medium || undefined,
-        UTM_CAMPAIGN: lead.utm_campaign || undefined,
-        UTM_CONTENT: lead.utm_content || undefined,
-        UTM_TERM: lead.utm_term || undefined,
-      },
-    }),
+    body: JSON.stringify({ fields }),
   });
   return res.json();
 }
@@ -102,6 +138,7 @@ async function sendWahaNotification(lead) {
     `New Techno One lead\n` +
     `Name: ${lead.name}\n` +
     `Phone: ${lead.phone}\n` +
+    `Email: ${lead.email || "-"}\n` +
     `Interested in: ${lead.interest || "-"}\n` +
     `Requested: ${lead.want || "-"}\n` +
     `Message: ${lead.message || "-"}\n` +

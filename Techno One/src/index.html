@@ -21,10 +21,10 @@
     </a>
     <nav class="nav-links">
       <a href="#opportunity">Opportunity</a>
-      <a href="#plans">Plans</a>
       <a href="#location">Location</a>
-      <a href="#payment">Payment</a>
       <a href="#amenities">Amenities</a>
+      <a href="#plans">Plans</a>
+      <a href="#pricing">Pricing &amp; Payment</a>
       <a href="#developer">Developer</a>
     </nav>
     <div class="nav-cta">
@@ -36,10 +36,10 @@
   </div>
   <div class="mobile-menu" id="mobileMenu" hidden>
     <a href="#opportunity">Opportunity</a>
-    <a href="#plans">Plans</a>
     <a href="#location">Location</a>
-    <a href="#payment">Payment</a>
     <a href="#amenities">Amenities</a>
+    <a href="#plans">Plans</a>
+    <a href="#pricing">Pricing &amp; Payment</a>
     <a href="#developer">Developer</a>
     <button type="button" class="btn btn-primary" data-open-modal="leadModal">Download Brochure</button>
     <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Advisor</a>
@@ -48,13 +48,15 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
-  <img src="img/renders/facade-twilight.jpg" alt="Techno One exterior render at twilight, DHA Phase 1 Islamabad" class="hero-photo">
+  <picture>
+    <source media="(max-width: 640px)" srcset="img/renders/Hero%20Render%20Desktop.png">
+    <img src="img/renders/Hero%20Render%20Desktop.png" alt="Techno One corporate office with panoramic city view, DHA Phase 1 Islamabad" class="hero-photo">
+  </picture>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-content">
     <div class="hero-text">
       <div class="hero-kicker">Premier Choice International — DHA Phase 1, Islamabad</div>
-      <!-- Placeholder headline — final copy pending -->
-      <h1 class="display">A Premium Commercial Address<br><span class="accent">on Orchard Boulevard.</span></h1>
+      <h1 class="display">Some Buildings Are Occupied.<br><span class="accent">Few Are Remembered.</span></h1>
       <p class="lead">Techno One is DHA Phase 1's next commercial landmark — retail, offices and rooftop dining under one address. Built for the businesses of tomorrow.</p>
       <div class="hero-ctas">
         <button type="button" class="btn btn-primary" data-open-modal="leadModal">Download Brochure</button>
@@ -71,34 +73,48 @@
 </section>
 <div class="wrap hero-highlights-wrap">
   <div class="hero-highlights">
-    <div><b>3</b><span>Asset Classes</span></div>
+    <div><b>30% Downpayment</b><span>24 Months Installments</span></div>
     <div><b>18+18</b><span>Shops &amp; Offices</span></div>
     <div><b>MLR</b><span>Road Frontage</span></div>
     <div><b>30%</b><span>Grey Structure Complete</span></div>
   </div>
 </div>
 
-<!-- ================= 01 THE OPPORTUNITY ================= -->
-<section class="opportunity section-pad" id="opportunity">
+<!-- ================= TRUST BAR ================= -->
+<div class="trust-bar">
+  <div class="wrap">
+    <ul>
+      <li>
+        <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v5c0 5-3.4 9-8 11-4.6-2-8-6-8-11V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <b>Premier Choice</b><span>International Development</span>
+      </li>
+      <li>
+        <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4.2-4.4-7-8.2-7-11.5a7 7 0 1114 0C19 12.8 16.2 16.6 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        <b>DHA Phase 1</b><span>Orchard Boulevard, Islamabad</span>
+      </li>
+      <li>
+        <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 3v18M15 3v18M5 9h14M5 15h14"/></svg>
+        <b>LG+G+M+4+Rooftop</b><span>Verified Structure</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 01 THE OPPORTUNITY (ABOUT THE PROJECT) ================= -->
+<section class="about-project section-pad" id="opportunity">
   <div class="wrap">
     <div class="opp-top">
       <div>
-        <div class="eyebrow"><span class="idx">01</span> The Opportunity</div>
+        <div class="eyebrow"><span class="idx">01</span> About the Project</div>
         <h2 class="display">One Address.<br><span class="accent">Three Ways to Perform.</span></h2>
       </div>
       <p class="body-copy">DHA 1 · LG+G+M+4+Rooftop — three asset classes in one commercial address, in a proven and constrained commercial corridor.</p>
     </div>
 
-    <div class="opp-grid">
-      <div class="opp-media">
-        <img src="img/renders/hero-aerial.jpg" alt="Techno One rooftop terrace and building environment, aerial view">
-      </div>
-      <div class="opp-fact">
-        <b>18 + 18</b>
-        <span>Verified retail shops and corporate offices across the building's architectural plans — plus one rooftop restaurant. Scarcity by design, not by claim.</span>
-      </div>
+    <div class="opp-media opp-media-full">
+      <img src="img/renders/hero-aerial.jpg" alt="Techno One rooftop terrace and building environment, aerial view">
     </div>
-    <div class="opp-row">
+    <div class="opp-row" style="margin-bottom: 0;">
       <div>
         <h4>Why This Matters to Investors</h4>
         <ul class="reason-list">
@@ -110,78 +126,305 @@
       <div>
         <h4>Commercial Concept</h4>
         <ul class="stack-list">
-          <li><b>Retail &amp; Dining</b><span>Ground – 1st</span></li>
-          <li><b>Corporate Offices</b><span>2nd – 4th</span></li>
-          <li><b>Rooftop Restaurant</b><span>Penthouse / Rooftop</span></li>
+          <li><b>Retail &amp; Dining</b><span>Ground – 1st · 10,000 SqFt</span></li>
+          <li><b>Corporate Offices</b><span>2nd – 4th · 8,000 SqFt</span></li>
+          <li><b>Rooftop Restaurant</b><span>Penthouse / Rooftop · 2,500 SqFt</span></li>
         </ul>
       </div>
     </div>
+  </div>
 
-    <div class="philosophy">
-      <div>
-        <div class="eyebrow"><span class="idx">—</span> Designed for Those Who Lead</div>
-        <p class="body-copy" style="margin-top:16px; max-width:42ch;">Techno One is built for businesses that plan to grow, not just operate. Its architecture, materials, location and layout are shaped around one goal: a workspace that signals credibility from day one.</p>
-        <a href="#plans" class="btn-text" style="margin-top:22px;">Explore the Investment Opportunity →</a>
+<!-- ================= LOCATION SUB-SECTION ================= -->
+  <div class="locality sub-section" id="location">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="idx">—</span> Location</div>
+          <h2 class="display">Minutes From <span class="accent">Everything That Matters</span></h2>
+        </div>
+        <p class="body-copy"><em>"Some addresses are found. This one was chosen."</em> Techno One sits directly on Main MLR Road, DHA Phase 1 — in the same neighbourhood as other Premier Choice developments.</p>
       </div>
-      <blockquote>"Every Successful Business Needs the Right Address."</blockquote>
+    </div>
+
+    <div style="padding: 0 var(--gutter);">
+      <div class="location-map" id="locationMap">
+        <div class="map-photo-frame">
+          <img src="img/location-map.png" alt="Map showing Techno One's location in DHA 1, Islamabad, relative to GT Road, DHA Main Gate, Fauji Foundation Hospital, Foundation University, Grand Orchard and Army Public School" class="map-photo">
+        </div>
+        <button type="button" class="map-pin is-self" data-pin="techno-one" style="left:38.1%; top:51.8%;" aria-label="Techno One"><span class="pin-dot"></span><span class="pin-tip">Techno One Business Park</span></button>
+        <button type="button" class="map-pin" data-pin="dha-gate" style="left:53.3%; top:31.5%;" aria-label="DHA Main Gate"><span class="pin-dot"></span><span class="pin-tip">DHA Main Gate</span></button>
+        <button type="button" class="map-pin" data-pin="hospital" style="left:57.2%; top:21.8%;" aria-label="Fauji Foundation Hospital"><span class="pin-dot"></span><span class="pin-tip">Fauji Foundation Hospital</span></button>
+        <button type="button" class="map-pin" data-pin="university" style="left:57.7%; top:42.7%;" aria-label="Foundation University"><span class="pin-dot"></span><span class="pin-tip">Foundation University</span></button>
+        <button type="button" class="map-pin" data-pin="grand-orchard" style="left:46.7%; top:47.9%;" aria-label="Grand Orchard"><span class="pin-dot"></span><span class="pin-tip">Grand Orchard</span></button>
+        <button type="button" class="map-pin" data-pin="school" style="left:69.6%; top:85.2%;" aria-label="Army Public School, DHA-1"><span class="pin-dot"></span><span class="pin-tip">Army Public School, DHA-1</span></button>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="landmark-chips-wrap">
+        <span class="landmark-chips-label">Nearby Landmarks</span>
+        <div class="landmark-chips">
+          <button type="button" data-pin="techno-one" aria-selected="true">Techno One</button>
+          <button type="button" data-pin="dha-gate" aria-selected="false">DHA Main Gate</button>
+          <button type="button" data-pin="hospital" aria-selected="false">Fauji Foundation Hospital</button>
+          <button type="button" data-pin="university" aria-selected="false">Foundation University</button>
+          <button type="button" data-pin="grand-orchard" aria-selected="false">Grand Orchard</button>
+          <button type="button" data-pin="school" aria-selected="false">Army Public School</button>
+        </div>
+      </div>
+      <p class="disclaimer location-disclaimer" style="margin-bottom: 0;">Techno One Business Park sits on Main Link Road, DHA 1, Islamabad — directly off G.T. Road and minutes from the DHA Main Gate. Click a pin or landmark to locate it on the map.</p>
+    </div>
+  </div>
+
+<!-- ================= HIGHLIGHTS SUB-SECTION ================= -->
+  <div class="highlights-light sub-section">
+    <div class="wrap">
+      <div class="section-head center">
+        <div>
+          <div class="eyebrow"><span class="idx">—</span> Key Highlights</div>
+          <h2 class="display" style="font-weight: 700; font-size: clamp(32px, 4.8vw, 54px);">Project Highlights</h2>
+          <p class="body-copy">Techno One combines a boulevard address, three asset classes and verified planning into one commercial landmark.</p>
+        </div>
+      </div>
+      <div class="highlight-rail-light">
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4.2-4.4-7-8.2-7-11.5a7 7 0 1114 0C19 12.8 16.2 16.6 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          <span class="label">Boulevard Address</span>
+          <p class="sub">Direct frontage on Orchard Boulevard, DHA Phase 1, with Main Link Road access.</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 3v18M15 3v18M5 9h14M5 15h14"/></svg>
+          <span class="label">Three Asset Classes</span>
+          <p class="sub">Retail, corporate offices and rooftop dining under a single verified address.</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9l1.2-5h13.6L20 9M4 9v10h16V9M4 9h16M9 19v-6h6v6"/></svg>
+          <span class="label">Retail &amp; Dining</span>
+          <p class="sub">18 shops across Lower Ground, Ground, Mezzanine and 1st floor.</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          <span class="label">Corporate Offices</span>
+          <p class="sub">18 offices across the 2nd, 3rd and 4th floors, built for growing businesses.</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 0 7 2.8 7 6H5c0-3.2 3-6 7-6z"/><path d="M12 9v6M8 21l2-6M16 21l-2-6"/></svg>
+          <span class="label">Rooftop Restaurant</span>
+          <p class="sub">A 2,500 sq. ft. dining terrace at the crown of the building.</p>
+        </div>
+      </div>
+
+      <div class="highlight-rail-light highlight-rail-amenities">
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+          <span class="label">Retail Spaces</span>
+          <p class="sub">LG – 1st Floor</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18"/></svg>
+          <span class="label">Office Spaces</span>
+          <p class="sub">2nd – 4th Floor</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 0118 0z"/><path d="M2 12h20M12 5V3M9 3h6"/></svg>
+          <span class="label">Rooftop Restaurant</span>
+          <p class="sub">Penthouse level dining terrace</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="3" width="10" height="18" rx="1"/><path d="M11 8l-1.5 1.5L11 11M13 14l1.5 1.5L13 17"/></svg>
+          <span class="label">High-Speed Elevator</span>
+          <p class="sub">Passenger lift to all floors</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a10 10 0 0114 0M8 15a6 6 0 018 0"/><circle cx="12" cy="18" r="1"/></svg>
+          <span class="label">Fibre Connectivity</span>
+          <p class="sub">High-speed internet ready</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="14" height="9" rx="1"/><circle cx="7" cy="19" r="1.4"/><circle cx="15" cy="19" r="1.4"/><path d="M17 11h2l2 3v3h-4"/></svg>
+          <span class="label">Dedicated Parking</span>
+          <p class="sub">On-site parking available</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          <span class="label">24/7 Power Backup</span>
+          <p class="sub">Uninterrupted power supply</p>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v5c0 5-3.4 9-8 11-4.6-2-8-6-8-11V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="label">24-Hour Security</span>
+          <p class="sub">Round-the-clock surveillance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ================= AMENITIES SUB-SECTION ================= -->
+  <div class="amenities sub-section" id="amenities">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="idx">—</span> Amenities &amp; Rooftop</div>
+          <h2 class="display">Designed for Business, <span class="accent">Comfort and Continuity</span></h2>
+        </div>
+        <p class="body-copy">The rooftop restaurant, ground-floor retail and dedicated office floors each answer a different part of the day.</p>
+      </div>
+
+      <div class="amenity-feature">
+        <div class="media">
+          <img src="img/renders/rooftop-terrace-dining.png" alt="Techno One rooftop restaurant terrace at dusk, DHA Phase 1 Islamabad">
+        </div>
+        <div class="copy">
+          <div class="eyebrow"><span class="idx">—</span> Featured Amenity</div>
+          <h3 class="display" style="margin-top:14px;">Rooftop. The Crown.</h3>
+          <p class="body-copy" style="margin-top:12px;">An invitation to dine well. Created for business lunches, casual meetings, everyday dining and social gatherings — it welcomes everyone, from the professionals who work here to the visitors who make it part of their day.</p>
+          <div class="strip">2,500 Sq.Ft. Restaurant · Business &amp; Social Dining · Rooftop Level</div>
+        </div>
+      </div>
+
+      <div class="amenity-icon-grid">
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+          <span class="label">Retail Spaces</span>
+          <span class="sub">LG – 1st Floor</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18"/></svg>
+          <span class="label">Office Spaces</span>
+          <span class="sub">2nd – 4th Floor</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 0118 0z"/><path d="M2 12h20M12 5V3M9 3h6"/></svg>
+          <span class="label">Rooftop Restaurant</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="3" width="10" height="18" rx="1"/><path d="M11 8l-1.5 1.5L11 11M13 14l1.5 1.5L13 17"/></svg>
+          <span class="label">High-Speed Elevator</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a10 10 0 0114 0M8 15a6 6 0 018 0"/><circle cx="12" cy="18" r="1"/></svg>
+          <span class="label">Fibre Connectivity</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="14" height="9" rx="1"/><circle cx="7" cy="19" r="1.4"/><circle cx="15" cy="19" r="1.4"/><path d="M17 11h2l2 3v3h-4"/></svg>
+          <span class="label">Dedicated Parking</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          <span class="label">24/7 Power Backup</span>
+        </div>
+        <div>
+          <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v5c0 5-3.4 9-8 11-4.6-2-8-6-8-11V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="label">24-Hour Security</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ================= GALLERY SUB-SECTION ================= -->
+  <div class="gallery-section sub-section" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow"><span class="idx">—</span> Gallery</div>
+          <h2 class="display">Renders &amp; <span class="accent">Interiors</span></h2>
+        </div>
+        <p class="body-copy">A first look at the exterior. Interior and amenity photography will be added as they become available.</p>
+      </div>
+      <div class="gallery-grid">
+        <a href="img/renders/facade-twilight.jpg" target="_blank" class="g-wide g-tall g-real" data-label="Exterior Facade — Twilight"><img src="img/renders/facade-twilight.jpg" alt="Techno One exterior facade at twilight"></a>
+        <a href="img/renders/hero-aerial.jpg" target="_blank" class="g-real" data-label="Aerial View"><img src="img/renders/hero-aerial.jpg" alt="Techno One aerial environment view"></a>
+        <a href="img/renders/facade-dusk.jpg" target="_blank" class="g-real" data-label="Exterior Facade — Dusk"><img src="img/renders/facade-dusk.jpg" alt="Techno One exterior facade at dusk"></a>
+        <a href="img/renders/Day%20Time%20View.png" target="_blank" class="g-real" data-label="Retail Environment"><img src="img/renders/Day%20Time%20View.png" alt="Retail Environment - Techno One"></a>
+        <a href="img/renders/office-lifestyle-2.png" target="_blank" class="g-real" data-label="Corporate Office View"><img src="img/renders/office-lifestyle-2.png" alt="Techno One corporate office interior with city view"></a>
+        <a href="img/renders/rooftop-aerial-1.png" target="_blank" class="g-wide g-real" style="grid-column: span 2;" data-label="Rooftop Restaurant, Aerial"><img src="img/renders/rooftop-aerial-1.png" alt="Techno One rooftop restaurant, aerial view at dusk"></a>
+      </div>
+      <div class="section-cta">
+        <div>
+          <h3>Explore the Full Project Experience</h3>
+          <p>Get the complete brochure with high-res renders, layout plans, and detailed amenities.</p>
+        </div>
+        <div class="section-cta-actions">
+          <button type="button" class="btn btn-primary" data-open-modal="leadModal" data-modal-title="Download Brochure">Download Brochure</button>
+          <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-outline-dark">WhatsApp Sales</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 02 LAYOUT PLANS ================= -->
+<!-- ================= 06 LAYOUT PLANS (LOCKED — LEAD-GATED) ================= -->
 <section class="plans section-pad" id="plans">
-  <div class="wrap on-dark">
+  <div class="wrap">
     <div class="section-head">
       <div>
         <div class="eyebrow"><span class="idx">02</span> Layout Plans</div>
         <h2 class="display">Spaces Planned for <span class="accent">Business and Value</span></h2>
       </div>
-      <p class="body-copy">Eight verified levels, from lower-ground retail to the rooftop restaurant. Select a floor to see its real layout, unit count and status.</p>
+      <p class="body-copy">Eight verified levels, from lower-ground retail to the rooftop restaurant. Click a floor on the render to see it highlighted — submit your details once to unlock the real layout, unit count and status.</p>
     </div>
 
-    <div class="plans-body">
-      <div class="floor-index" role="tablist" aria-label="Building floors">
-        <button class="floor-btn" data-floor="rooftop" aria-selected="false"><b>Rooftop</b><span>F&amp;B</span></button>
-        <button class="floor-btn" data-floor="fourth" aria-selected="false"><b>4th Floor</b><span>Offices 401–406</span></button>
-        <button class="floor-btn" data-floor="third" aria-selected="false"><b>3rd Floor</b><span>Offices 301–306</span></button>
-        <button class="floor-btn" data-floor="second" aria-selected="false"><b>2nd Floor</b><span>Offices 201–206</span></button>
-        <button class="floor-btn" data-floor="first" aria-selected="false"><b>1st Floor</b><span>Shops 101–106</span></button>
-        <button class="floor-btn" data-floor="mezzanine" aria-selected="false"><b>Mezzanine</b><span>Shops M-01–M-06</span></button>
-        <button class="floor-btn" data-floor="ground" aria-selected="true"><b>Ground Floor</b><span>Shops G-01–G-03</span></button>
-        <button class="floor-btn" data-floor="lower-ground" aria-selected="false"><b>Lower Ground</b><span>Shops LGS-01–LGS-03</span></button>
+    <div class="elevation-widget">
+      <div class="floor-tabs" role="tablist" aria-label="Building floors">
+        <button class="floor-tab" data-floor="rooftop" aria-selected="false">Rooftop</button>
+        <button class="floor-tab" data-floor="fourth" aria-selected="false">4th Floor</button>
+        <button class="floor-tab" data-floor="third" aria-selected="false">3rd Floor</button>
+        <button class="floor-tab" data-floor="second" aria-selected="false">2nd Floor</button>
+        <button class="floor-tab" data-floor="first" aria-selected="false">1st Floor</button>
+        <button class="floor-tab" data-floor="mezzanine" aria-selected="false">Mezzanine</button>
+        <button class="floor-tab" data-floor="ground" aria-selected="true">Ground Floor</button>
+        <button class="floor-tab" data-floor="lower-ground" aria-selected="false">Lower Ground</button>
       </div>
 
-      <div>
-        <div class="floor-scroller" role="tablist" aria-label="Building floors (mobile)">
-          <button data-floor="lower-ground" aria-selected="false">LG</button>
-          <button data-floor="ground" aria-selected="true">Ground</button>
-          <button data-floor="mezzanine" aria-selected="false">Mezz</button>
-          <button data-floor="first" aria-selected="false">1st</button>
-          <button data-floor="second" aria-selected="false">2nd</button>
-          <button data-floor="third" aria-selected="false">3rd</button>
-          <button data-floor="fourth" aria-selected="false">4th</button>
-          <button data-floor="rooftop" aria-selected="false">Rooftop</button>
+      <div class="elevation-layout">
+        <div class="elevation-photo">
+          <img src="img/renders/facade-twilight.jpg" alt="Techno One exterior render — click a floor to view its layout plan">
+          <button type="button" class="elev-zone" data-floor="rooftop" style="top:8%; height:8.5%; left:19%; width:53%;"><span class="zone-label">Rooftop — View Plan</span></button>
+          <button type="button" class="elev-zone" data-floor="fourth" style="top:16.5%; height:12.5%; left:19%; width:53%;"><span class="zone-label">4th Floor — View Plan</span></button>
+          <button type="button" class="elev-zone" data-floor="third" style="top:29%; height:11%; left:19%; width:53%;"><span class="zone-label">3rd Floor — View Plan</span></button>
+          <button type="button" class="elev-zone" data-floor="second" style="top:40%; height:12.75%; left:19%; width:53%;"><span class="zone-label">2nd Floor — View Plan</span></button>
+          <button type="button" class="elev-zone" data-floor="first" style="top:52.75%; height:11.75%; left:19%; width:53%;"><span class="zone-label">1st Floor — View Plan</span></button>
+          <button type="button" class="elev-zone" data-floor="mezzanine" style="top:64.5%; height:11.5%; left:19%; width:53%;"><span class="zone-label">Mezzanine — View Plan</span></button>
+          <button type="button" class="elev-zone is-active" data-floor="ground" style="top:76%; height:13%; left:19%; width:53%;"><span class="zone-label">Ground Floor — View Plan</span></button>
         </div>
 
-        <div class="plan-view">
-          <div class="plan-view-head">
-            <h3 class="display" id="planTitle">Ground Floor</h3>
-            <div class="plan-meta">
-              <div><b id="planType">Retail</b><span>Use</span></div>
-              <div><b id="planUnits">3 Units</b><span>G-01 – G-03</span></div>
-              <div><b id="planStatus">Available</b><span>Status</span></div>
+        <div class="floor-plan-panel" style="position: relative;">
+          <div class="plan-real-content" style="filter: blur(8px); pointer-events: none; user-select: none; opacity: 0.6;">
+            <div class="plan-view-head">
+              <h3 class="display" id="planTitle">Ground Floor</h3>
+              <div class="plan-meta">
+                <div><b id="planType">Retail</b><span>Use</span></div>
+                <div><b id="planUnits">3 Units</b><span>G-01 – G-03</span></div>
+                <div><b id="planStatus">Available</b><span>Status</span></div>
+              </div>
+            </div>
+            <div class="plan-canvas" id="planCanvas">
+              <img src="img/floorplans/ground.jpg" alt="Techno One ground floor plan" id="planImage">
+              <button type="button" class="plan-expand" id="planExpand">⤢ Expand Plan</button>
+            </div>
+            <div class="plan-legend">
+              <span><i class="dot-shop"></i> Retail Shop</span>
+              <span><i class="dot-office"></i> Corporate Office</span>
+              <span><i class="dot-rooftop"></i> Rooftop Restaurant</span>
             </div>
           </div>
-          <div class="plan-canvas" id="planCanvas">
-            <img src="img/floorplans/ground.jpg" alt="Techno One ground floor plan" id="planImage">
-            <button type="button" class="plan-expand" id="planExpand">⤢ Expand Plan</button>
-          </div>
-          <div class="plan-legend">
-            <span><i class="dot-shop"></i> Retail Shop</span>
-            <span><i class="dot-office"></i> Corporate Office</span>
-            <span><i class="dot-rooftop"></i> Rooftop Restaurant</span>
+          <div class="floor-plan-lock" id="floorPlanLock" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.7); backdrop-filter: blur(4px); z-index: 10; text-align: center; padding: 30px; border-radius: 4px;">
+            <svg class="lock-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-bottom: 16px;"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+            <h3 class="display" style="font-size: 24px; font-weight: 600;">Unlock Floor Plans</h3>
+            <p class="body-copy" style="margin: 12px 0 24px;">Submit your details once to view real floor plans, unit counts and availability for every level.</p>
+            <button type="button" class="btn btn-primary" data-open-modal="leadModal" data-modal-title="Unlock Floor Plans" data-unlock-target="plans">Unlock Floor Plans</button>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="section-cta">
+      <div>
+        <h3>Found a Floor You Like?</h3>
+        <p>Ask our sales team about specific unit availability, pricing and layout on this floor.</p>
+      </div>
+      <div class="section-cta-actions">
+        <button type="button" class="btn btn-primary" data-open-modal="leadModal">Get Payment Plan &amp; Availability</button>
+        <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Sales</a>
       </div>
     </div>
   </div>
@@ -192,163 +435,104 @@
   <img src="" alt="Full-screen floor plan" id="planLightboxImage">
 </div>
 
-<!-- ================= 03 LOCALITY MAP ================= -->
-<section class="locality section-pad" id="location">
-  <div class="wrap on-dark">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow"><span class="idx">03</span> Location</div>
-        <h2 class="display">Minutes From <span class="accent">Everything That Matters</span></h2>
-      </div>
-      <p class="body-copy">Techno One sits directly on Orchard Boulevard, DHA Phase 1 — connected to Islamabad's core arteries with MLR Road frontage.</p>
-    </div>
-
-    <div class="map-body">
-      <div class="map-canvas">
-        <svg class="map-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <path d="M 30 90 Q 150 60 200 200" stroke="rgba(152,205,232,0.35)" stroke-width="2" fill="none" data-route="expressway"/>
-          <path d="M 20 210 Q 120 230 200 200" stroke="rgba(152,205,232,0.35)" stroke-width="2" fill="none" data-route="gt"/>
-          <path d="M 380 250 Q 280 260 200 200" stroke="rgba(152,205,232,0.35)" stroke-width="2" fill="none" data-route="mlr"/>
-        </svg>
-        <div class="map-pin" style="left:50%; top:50%;">
-          <div class="dot"></div>
-          <b>Techno One</b>
-        </div>
-        <div class="route-node" data-node="expressway" style="left:8%; top:20%;">Islamabad Expressway</div>
-        <div class="route-node" data-node="gt" style="left:4%; top:56%;">GT Road</div>
-        <div class="route-node" data-node="mlr" style="left:78%; top:64%;">Main Link Road</div>
-      </div>
-      <div class="landmark-list" role="tablist" aria-label="Nearby landmarks">
-        <button class="landmark-item" data-landmark="expressway" aria-selected="false">
-          <div class="time">Direct<small>Access</small></div>
-          <div class="name">Islamabad Expressway</div>
-        </button>
-        <button class="landmark-item" data-landmark="gt" aria-selected="false">
-          <div class="time">Minutes<small>Away</small></div>
-          <div class="name">GT Road</div>
-        </button>
-        <button class="landmark-item" data-landmark="mlr" aria-selected="false">
-          <div class="time">Frontage<small>On-site</small></div>
-          <div class="name">Main Link Road (MLR)</div>
-        </button>
-      </div>
-    </div>
-    <p class="disclaimer" style="margin-top:18px; color:var(--muted-on-dark);">Route labels are indicative and based on road connections confirmed by the developer; precise drive-times will be added once measured.</p>
-  </div>
-</section>
-
-<!-- ================= 04 PAYMENT PLAN ================= -->
-<section class="payment section-pad" id="payment">
+<!-- ================= 07 PRICING & PAYMENT PLAN (MERGED) ================= -->
+<section class="pricing-payment section-pad" id="pricing">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow"><span class="idx">04</span> Payment Plan</div>
-        <h2 class="display">A Plan Designed Around <span class="accent">Your Investment</span></h2>
+        <div class="eyebrow"><span class="idx">03</span> Pricing &amp; Payment Plan</div>
+        <h2 class="display">Real Rates, <span class="accent">Real Terms</span></h2>
       </div>
-      <p class="body-copy">A tentative structure by category, with a flexible custom-plan request for serious buyers.</p>
+      <p class="body-copy">Per-unit rates across all 36 verified units, plus a confirmed 30 / 60 / 10 payment structure — 24 monthly installments, with a flexible custom-plan request for serious buyers.</p>
     </div>
 
-    <div class="payment-tabs" role="tablist" aria-label="Payment plan categories">
+    <div class="payment-tabs" role="tablist" aria-label="Pricing and payment categories">
       <button class="tab-btn" data-tab="retail" aria-selected="true">Retail (LG · G · Mezz · 1st)</button>
       <button class="tab-btn" data-tab="offices" aria-selected="false">Offices (2nd–4th)</button>
-      <button class="tab-btn" data-tab="rooftop" aria-selected="false">Rooftop Restaurant</button>
     </div>
 
-    <div class="payment-grid">
+    <div class="table-wrap">
+      <table class="pricing">
+        <thead>
+          <tr><th>Category</th><th>Floor</th><th>Rate / Sq. Ft.</th><th>Area (Sq. Ft.)</th><th>Price Range (PKR)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="cat">Retail</td><td>Lower Ground</td><td>50,000</td><td>678 – 968</td><td class="price">33,883,000 – 48,421,000</td></tr>
+          <tr><td class="cat">Retail</td><td>Ground Floor</td><td>89,000</td><td>625 – 784</td><td class="price">55,642,000 – 69,740,000</td></tr>
+          <tr><td class="cat">Retail</td><td>Mezzanine</td><td>52,500 – 55,000</td><td>337 – 591</td><td class="price">17,707,000 – 32,479,000</td></tr>
+          <tr><td class="cat">Retail</td><td>1st Floor</td><td>45,000 – 47,500</td><td>337 – 591</td><td class="price">15,177,000 – 28,050,000</td></tr>
+          <tr><td class="cat">Office</td><td>2nd Floor</td><td>40,000 – 42,500</td><td>337 – 591</td><td class="price">13,491,000 – 25,097,000</td></tr>
+          <tr><td class="cat">Office</td><td>3rd Floor</td><td>27,500 – 29,000</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
+          <tr><td class="cat">Office</td><td>4th Floor</td><td>27,500 – 29,000</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-foot-note">Rates shown are rounded per-unit averages by floor; exact pricing varies by unit position and layout. All 36 units follow the same payment structure below.</p>
+    <div class="units-summary" style="margin-bottom: 40px;">
+      <div class="stat"><b>18</b><span>Retail Shops</span></div>
+      <div class="stat"><b>18</b><span>Corporate Offices</span></div>
+      <div class="stat"><b>36</b><span>Total Units</span></div>
+      <div class="stat"><b>9.28M–69.74M</b><span>Price Range (PKR)</span></div>
+    </div>
+
+    <div id="payment" class="payment-grid" style="padding-top: 40px; border-top: 1px solid var(--line);">
       <div>
+        <h3 class="display" style="font-size: 22px; margin-bottom: 24px;">Payment Structure</h3>
         <table class="stage-table">
           <thead><tr><th>Payment Stage</th><th>Percentage</th><th>Timing</th></tr></thead>
           <tbody>
-            <tr><td>Booking</td><td>XX%</td><td>At booking</td></tr>
-            <tr><td>Down Payment</td><td>XX%</td><td>Within confirmation period</td></tr>
-            <tr><td>Installments</td><td>XX%</td><td>Over the payment term</td></tr>
-            <tr><td>Possession</td><td>XX%</td><td>At handover</td></tr>
+            <tr><td>Down Payment</td><td>30%</td><td>At booking</td></tr>
+            <tr><td>Installments</td><td>60%</td><td>24 equal monthly installments (2.5% / month)</td></tr>
+            <tr><td>Possession</td><td>10%</td><td>At handover</td></tr>
           </tbody>
         </table>
-        <p class="disclaimer">Terms may vary by unit, floor, availability and approval. Figures shown are placeholders pending the developer's final tentative plan.</p>
       </div>
       <div>
-        <h4 style="font-family:var(--font-label); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--steel); margin-bottom:18px;">Plan at a Glance</h4>
-        <ul class="glance-list">
-          <li><span>Down Payment</span><span>XX%</span></li>
-          <li><span>Duration</span><span>XX Months</span></li>
-          <li><span>Frequency</span><span>Monthly</span></li>
-          <li><span>Possession</span><span>XX%</span></li>
-        </ul>
-        <button type="button" class="btn btn-outline-dark btn-block" style="margin-top:24px;" data-open-modal="leadModal" data-modal-title="Download Payment Plan">Download Payment Plan</button>
-      </div>
-    </div>
-
-    <div class="custom-plan">
-      <div class="custom-plan-head">
-        <div>
-          <div class="eyebrow"><span class="idx">—</span> Need a More Flexible Plan?</div>
-          <h3 class="display" style="margin-top:14px; color:#fff;">Customize Down Payment, Installment, Duration and Frequency</h3>
+        <div class="custom-plan-inline" style="margin-top: 0; padding-top: 0; border-top: none;">
+          <h4 style="font-family:var(--font-label); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Customized Plan</h4>
+          <p>Need something different? Customize your down payment, installment size, duration or frequency.</p>
+          <div class="pref-chips">
+            <button type="button" class="pref-chip">Lower DP</button>
+            <button type="button" class="pref-chip">Lower Installment</button>
+            <button type="button" class="pref-chip">Extended Tenure</button>
+            <button type="button" class="pref-chip">Quarterly</button>
+            <button type="button" class="pref-chip">Unit-Specific</button>
+          </div>
+          <div style="display: flex; gap: 14px; margin-top: 24px;">
+            <button type="button" class="btn btn-primary" style="flex:1;" data-open-modal="leadModal" data-modal-title="Request Customized Payment Plan">Request Custom Plan</button>
+            <button type="button" class="btn btn-outline-dark" style="flex:1;" data-open-modal="leadModal" data-modal-title="Download Payment Plan">Download Standard Plan</button>
+          </div>
         </div>
-      </div>
-      <div class="pref-chips">
-        <span class="pref-chip">Lower DP</span>
-        <span class="pref-chip">Lower Installment</span>
-        <span class="pref-chip">Extended Tenure</span>
-        <span class="pref-chip">Quarterly</span>
-        <span class="pref-chip">Unit-Specific</span>
-      </div>
-      <div class="custom-plan-ctas">
-        <button type="button" class="btn btn-primary" data-open-modal="leadModal" data-modal-title="Request Customized Payment Plan">Request Customized Payment Plan</button>
-        <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-outline">Talk to Advisor</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 05 AMENITIES ================= -->
-<section class="amenities section-pad" id="amenities">
+<!-- ================= 08 INVESTMENT BENEFITS ================= -->
+<section class="benefits-section section-pad" id="investment">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow"><span class="idx">05</span> Amenities</div>
-        <h2 class="display">Designed for Business, <span class="accent">Comfort and Continuity</span></h2>
+        <div class="eyebrow"><span class="idx">04</span> Investment Benefits</div>
+        <h2 class="display">Why It's a <span class="accent">Smart Investment</span></h2>
       </div>
-      <p class="body-copy">The rooftop restaurant, ground-floor retail and dedicated office floors each answer a different part of the day.</p>
+      <p class="body-copy">Built on a constrained commercial corridor and backed by Premier Choice's delivery record across four countries.</p>
     </div>
-
-    <div class="amenity-feature">
-      <div class="media">
-        <img src="img/renders/facade-dusk.jpg" alt="Techno One rooftop restaurant terrace at dusk">
-      </div>
-      <div class="copy">
-        <div class="eyebrow"><span class="idx">—</span> Featured Amenity</div>
-        <h3 class="display" style="margin-top:14px;">Rooftop. The Crown.</h3>
-        <p class="body-copy" style="margin-top:12px;">An invitation to dine well. Created for business lunches, casual meetings, everyday dining and social gatherings — it welcomes everyone, from the professionals who work here to the visitors who make it part of their day.</p>
-        <div class="strip">2,500 Sq.Ft. Restaurant · Business &amp; Social Dining · Rooftop Level</div>
-      </div>
-    </div>
-
-    <div class="amenity-split">
-      <ul class="amenity-list">
-        <li><span class="num">01</span><div><h4>Premium Lobby &amp; Reception<em>Arrival &amp; Access</em></h4><p>A dedicated arrival experience for tenants, clients and visitors alike.</p></div></li>
-        <li><span class="num">02</span><div><h4>Concierge &amp; Business Services<em>Business</em></h4><p>Day-to-day facility support so tenants can focus on running their business.</p></div></li>
-        <li><span class="num">03</span><div><h4>Conference &amp; Meeting Facilities<em>Business</em></h4><p>Shared meeting space for businesses that don't need their own boardroom.</p></div></li>
-        <li><span class="num">04</span><div><h4>24-Hour Manned Security<em>Safety</em></h4><p>Round-the-clock security presence across the building.</p></div></li>
-      </ul>
-      <div class="ops-panel">
-        <div class="eyebrow"><span class="idx">—</span> Building Operations</div>
-        <ul class="ops-list">
-          <li><b>30%</b><span>Grey structure complete, verified progress</span></li>
-          <li><b>Steady</b><span>Construction progress toward an efficient delivery timeline</span></li>
-          <li><b>Experienced</b><span>Engineers and consultants overseeing delivery</span></li>
-          <li><b>Every Stage</b><span>Quality assurance checked throughout construction</span></li>
-        </ul>
-      </div>
+    <div class="benefit-list">
+      <div class="benefit-item"><h3>DHA Phase 1 Commercial Scarcity</h3><p>A verified commercial address in one of Islamabad's most constrained corridors — supply is limited by design.</p></div>
+      <div class="benefit-item"><h3>Three Asset Classes, One Address</h3><p>Retail, corporate offices and rooftop dining diversify exposure within a single investment.</p></div>
+      <div class="benefit-item"><h3>Rental Yield Potential</h3><p>Independent rental streams across retail, office and F&amp;B categories, each with its own demand profile.</p></div>
+      <div class="benefit-item"><h3>Capital Appreciation Trajectory</h3><p>A constrained corridor with proven appreciation patterns among Premier Choice's prior developments.</p></div>
+      <div class="benefit-item"><h3>Verified Construction Progress</h3><p>Every progress figure on this page — including the 30% grey-structure milestone — is tracked and disclosed openly.</p></div>
+      <div class="benefit-item"><h3>Backed By a 20+ Year Track Record</h3><p>Premier Choice's in-house delivery, design and facility-management teams stay on beyond handover.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= 06 DEVELOPER LEGACY ================= -->
+<!-- ================= 09 DEVELOPER LEGACY ================= -->
 <section class="legacy section-pad" id="developer">
-  <div class="legacy-ghost" aria-hidden="true"><span>PCI</span></div>
   <div class="wrap">
-    <div class="eyebrow"><span class="idx">06</span> Developer Legacy</div>
+    <div class="eyebrow"><span class="idx">05</span> Developer Legacy</div>
     <div class="legacy-top">
       <div class="legacy-identity">
         <img src="img/logos/premier-choice.png" alt="Premier Choice International" class="pc-logo" onerror="this.style.display='none'">
@@ -367,61 +551,131 @@
       <div><b>4</b><span>Countries</span></div>
       <div><b>ISO</b><span>Certified Operations</span></div>
     </div>
-
-    <div class="eyebrow" style="margin-bottom:24px;"><span class="idx">—</span> Selected Developments</div>
   </div>
 
-  <div class="logo-marquee">
-    <div class="marquee-track">
-      <div class="marquee-item"><img src="img/logos/roman-grove.png" alt="Roman Grove I" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Roman Grove I'}))"></div>
-      <div class="marquee-item"><span class="txt-fallback">Roman Grove II</span></div>
-      <div class="marquee-item"><span class="txt-fallback">Box Park I</span></div>
-      <div class="marquee-item"><span class="txt-fallback">68 High Street</span></div>
-      <div class="marquee-item"><img src="img/logos/grand-orchard.png" alt="Grand Orchard" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Grand Orchard'}))"></div>
-      <div class="marquee-item"><span class="txt-fallback">Ramada Hotel</span></div>
-      <div class="marquee-item" aria-hidden="true"><img src="img/logos/roman-grove.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Roman Grove I'}))"></div>
-      <div class="marquee-item" aria-hidden="true"><span class="txt-fallback">Roman Grove II</span></div>
-      <div class="marquee-item" aria-hidden="true"><span class="txt-fallback">Box Park I</span></div>
-      <div class="marquee-item" aria-hidden="true"><span class="txt-fallback">68 High Street</span></div>
-      <div class="marquee-item" aria-hidden="true"><img src="img/logos/grand-orchard.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Grand Orchard'}))"></div>
-      <div class="marquee-item" aria-hidden="true"><span class="txt-fallback">Ramada Hotel</span></div>
+  <div class="logo-carousel">
+    <div class="logo-carousel-track">
+      <div class="logo-chip"><img src="img/logos/roman-grove.png" alt="Roman Grove logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Roman Grove'}))"><span>Roman Grove</span></div>
+      <div class="logo-chip"><img src="img/logos/box-park.png" alt="Box Park logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Box Park'}))"><span>Box Park</span></div>
+      <div class="logo-chip"><img src="img/logos/grand-orchard.png" alt="Grand Orchard logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Grand Orchard'}))"><span>Grand Orchard</span></div>
+      <div class="logo-chip"><img src="img/logos/buraq-heights.png" alt="Buraq Heights logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Buraq Heights'}))"><span>Buraq Heights</span></div>
+      <div class="logo-chip"><img src="img/logos/river-courtyard.png" alt="River Courtyard logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'River Courtyard'}))"><span>River Courtyard</span></div>
+      <div class="logo-chip"><img src="img/logos/grand-gallery.png" alt="Grand Gallery logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt-fallback',textContent:'Grand Gallery'}))"><span>Grand Gallery</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/roman-grove.png" alt=""><span>Roman Grove</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/box-park.png" alt=""><span>Box Park</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/grand-orchard.png" alt=""><span>Grand Orchard</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/buraq-heights.png" alt=""><span>Buraq Heights</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/river-courtyard.png" alt=""><span>River Courtyard</span></div>
+      <div class="logo-chip" aria-hidden="true"><img src="img/logos/grand-gallery.png" alt=""><span>Grand Gallery</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="why-list">
+      <div class="why-item"><h4>PFM — Facility Management</h4><p>An in-house team stays on-site permanently for security, upkeep and maintenance.</p></div>
+      <div class="why-item"><h4>In-House Design Wing</h4><p>Architecture and interiors developed internally, not outsourced piecemeal.</p></div>
+      <div class="why-item"><h4>In-House Construction Wing</h4><p>Delivery is managed directly by Premier Choice's own team.</p></div>
+      <div class="why-item"><h4>Real Renders, Real Site</h4><p>Every render on this page is Techno One's own — not stock photography.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= 07 FINAL CTA ================= -->
-<section class="final-cta" id="contact">
-  <div class="final-ghost" aria-hidden="true"><span>NEXT STEP</span></div>
-  <div class="final-grid">
-    <div class="final-media">
-      <img src="img/renders/hero-aerial.jpg" alt="Techno One final render">
+<!-- ================= 10 LEAD CAPTURE FORM ================= -->
+<section class="lead-section section-pad" id="lead-form">
+  <div class="wrap lead-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="idx">06</span> Get In Touch</div>
+      <h2 class="display" style="font-size:clamp(26px,3.2vw,40px);">Get Payment Plan &amp; Available Units</h2>
+      <p class="lead-copy">Fill in the form and our sales team will get back to you shortly with pricing, floor plans and unit availability.</p>
+      <ul class="lead-points">
+        <li><span class="tick">✓</span> Full pricing sheet for shops &amp; offices</li>
+        <li><span class="tick">✓</span> Flexible payment plan breakdown</li>
+        <li><span class="tick">✓</span> Current unit availability</li>
+      </ul>
+      <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp: +92 301 123 3333</a>
     </div>
-    <div class="final-copy">
-      <div class="eyebrow"><span class="idx">07</span> Take the Next Step</div>
-      <blockquote style="margin-top:18px;">Not Every Address Defines its Era. Some Simply Endure it. Others Become it.</blockquote>
-      <p class="body-copy">The buildings that shape how a city sees itself are rarely the largest — they are the most considered. Tomorrow's landmark begins with today's decision.</p>
-      <div class="final-ctas">
-        <button type="button" class="btn btn-primary" data-open-modal="leadModal">Download Brochure</button>
-        <button type="button" class="btn btn-outline" data-open-modal="leadModal" data-modal-title="Request Customized Payment Plan">Request Custom Plan</button>
-        <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Advisor</a>
-      </div>
+    <div class="lead-form-panel">
+      <h3 class="display" style="font-size:22px;">Request Details</h3>
+      <p class="sub">We usually respond within a few hours.</p>
+      <form id="pageLeadForm">
+        <div class="form-row">
+          <div class="form-field"><label for="fname">Full Name</label><input id="fname" name="name" type="text" required></div>
+          <div class="form-field"><label for="fphone">Phone / WhatsApp</label><input id="fphone" name="phone" type="tel" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full"><label for="femail">Email Address</label><input id="femail" name="email" type="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="finterest">I Am Interested In</label>
+            <select id="finterest" name="interest">
+              <option>Retail Shop</option>
+              <option>Corporate Office</option>
+              <option>Investment / Both</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="fbudget">Budget Range</label>
+            <select id="fbudget" name="budget">
+              <option>Under PKR 10 Million</option>
+              <option>PKR 10 – 25 Million</option>
+              <option>PKR 25+ Million</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full"><label for="fmsg">Message (optional)</label><textarea id="fmsg" name="message" rows="3"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Me Details</button>
+        <p class="form-note">By submitting, you agree to be contacted by our sales team regarding Techno One.</p>
+        <div class="form-status" id="pageLeadStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
 
-      <div class="callback">
-        <div class="eyebrow"><span class="idx">—</span> Or Request a Personal Callback</div>
-        <form class="callback-form" id="callbackForm">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="tel" name="phone" placeholder="WhatsApp Number" required>
-          <select name="interest" style="grid-column: span 2;">
-            <option value="">Interest — Retail / Office / Investment / Custom Plan / Site Visit</option>
-            <option>Retail</option>
-            <option>Office</option>
-            <option>Investment</option>
-            <option>Custom Plan</option>
-            <option>Site Visit</option>
-          </select>
-          <button type="submit" class="btn btn-primary">Request Callback</button>
-        </form>
-        <div class="form-status" id="callbackStatus"></div>
+<!-- ================= 11 FAQ ================= -->
+<section class="faq-section section-pad" id="faqs">
+  <div class="wrap">
+    <div class="section-head center">
+      <div>
+        <div class="eyebrow"><span class="idx">07</span> FAQs</div>
+        <h2 class="display">Common Questions</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">What is the starting investment for Techno One? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The final payment plan is being finalized by the developer. Request the current payment plan via the form above or WhatsApp for the latest booking, down payment and installment figures.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where exactly is Techno One located? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Orchard Boulevard, DHA Phase 1, Islamabad, with direct Main Link Road (MLR) frontage — in the same corridor as other Premier Choice developments.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How many shops and offices are available? <span class="plus">+</span></button>
+        <div class="faq-a"><p>18 retail shops (Lower Ground, Ground, Mezzanine and 1st floor) and 18 corporate offices (2nd, 3rd and 4th floors), plus one rooftop restaurant.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the current construction status? <span class="plus">+</span></button>
+        <div class="faq-a"><p>The grey structure is 30% complete as of the latest verified update. Contact our sales team for the most current site progress.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Who manages the building after handover? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Premier Choice's in-house Property &amp; Facility Management team remains on-site permanently for security, upkeep and maintenance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I request a customized payment plan? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — use the "Request Customized Payment Plan" option in the Pricing &amp; Payment Plan section to adjust down payment, installment size, duration or frequency.</p></div>
+      </div>
+    </div>
+    <div class="section-cta" style="border-top:none; justify-content:center; text-align:center; padding-top:8px;">
+      <div>
+        <h3>Still Have Questions?</h3>
+        <p>Our sales team typically responds within a few hours.</p>
+      </div>
+      <div class="section-cta-actions">
+        <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Us Directly</a>
       </div>
     </div>
   </div>
@@ -438,11 +692,13 @@
       <div class="footer-col">
         <h5>Project</h5>
         <a href="#opportunity">Opportunity</a>
-        <a href="#plans">Layout Plans</a>
         <a href="#location">Location</a>
-        <a href="#payment">Payment Plan</a>
         <a href="#amenities">Amenities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#plans">Layout Plans</a>
+        <a href="#pricing">Pricing &amp; Payment Plan</a>
         <a href="#developer">Developer</a>
+        <a href="#faqs">FAQs</a>
       </div>
       <div class="footer-col">
         <h5>Information</h5>
@@ -479,6 +735,7 @@
     <form id="leadForm">
       <div class="field"><label for="leadName">Name</label><input type="text" id="leadName" name="name" required></div>
       <div class="field"><label for="leadPhone">WhatsApp Number</label><input type="tel" id="leadPhone" name="phone" required></div>
+      <div class="field"><label for="leadEmail">Email Address</label><input type="email" id="leadEmail" name="email" required></div>
       <div class="field">
         <label for="leadInterest">Interested In</label>
         <select id="leadInterest" name="interest">

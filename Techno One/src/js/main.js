@@ -1,6 +1,7 @@
 // Techno One landing page interactions: header scroll state, mobile menu,
-// lead modal, floor-plan viewer, locality map, payment tabs, sticky mobile
-// actions, and lead/callback form submission.
+// lead modal, floor-plan viewer, payment tabs, FAQ accordion, sticky
+// mobile actions, and lead form submission (modal, quick-lead strip,
+// dedicated lead-capture section).
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ---------- Header scroll state ---------- */
@@ -77,7 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
     planStatus.textContent = f.status;
     planImage.src = f.img;
     planImage.alt = `Techno One ${f.title} floor plan`;
-    allFloorButtons.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.floor === key)));
+    allFloorButtons.forEach((b) => {
+      const isMatch = b.dataset.floor === key;
+      b.setAttribute("aria-selected", String(isMatch));
+      b.classList.toggle("is-active", isMatch);
+    });
   }
   allFloorButtons.forEach((btn) => btn.addEventListener("click", () => selectFloor(btn.dataset.floor)));
 
@@ -94,21 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === lightbox) lightbox.classList.remove("is-open");
   });
 
-  /* ---------- Locality map ---------- */
-  const landmarkButtons = document.querySelectorAll(".landmark-item");
-  const routeNodes = document.querySelectorAll(".route-node");
-  const routePaths = document.querySelectorAll("[data-route]");
-  landmarkButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const key = btn.dataset.landmark;
-      landmarkButtons.forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
-      routeNodes.forEach((n) => n.classList.toggle("is-active", n.dataset.node === key));
-      routePaths.forEach((p) => {
-        p.setAttribute("stroke", p.dataset.route === key ? "#98cde8" : "rgba(152,205,232,0.35)");
-        p.setAttribute("stroke-width", p.dataset.route === key ? "3" : "2");
-      });
-    });
-  });
+  /* ---------- Location pin map ---------- */
+  const mapPins = document.querySelectorAll(".map-pin");
+  const landmarkChips = document.querySelectorAll(".landmark-chips button");
+  function selectPin(key) {
+    mapPins.forEach((p) => p.classList.toggle("is-active", p.dataset.pin === key));
+    landmarkChips.forEach((c) => c.setAttribute("aria-selected", String(c.dataset.pin === key)));
+  }
+  mapPins.forEach((pin) => pin.addEventListener("click", () => selectPin(pin.dataset.pin)));
+  landmarkChips.forEach((chip) => chip.addEventListener("click", () => selectPin(chip.dataset.pin)));
 
   /* ---------- Payment tabs (visual — same placeholder data for all categories) ---------- */
   document.querySelectorAll(".tab-btn").forEach((tab) => {
@@ -117,11 +116,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const q = item.querySelector(".faq-q");
+    q.addEventListener("click", () => {
+      const wasOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach((i) => i.classList.remove("open"));
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
+
+  /* ---------- Payment Customization Chips ---------- */
+  document.querySelectorAll(".pref-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chip.classList.toggle("is-active");
+    });
+  });
+
   /* ---------- Sticky mobile actions ---------- */
   const sticky = document.getElementById("stickyActions");
   const heroEl = document.querySelector(".hero");
   const paymentEl = document.getElementById("payment");
-  const finalCtaEl = document.getElementById("contact");
+  const finalCtaEl = document.querySelector(".site-footer");
   const stickySecondary = document.getElementById("stickySecondaryBtn");
 
   function updateSticky() {
@@ -174,14 +190,23 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(leadForm).entries());
     data.want = modalTitle.textContent;
+    
+    // Append custom plan preferences if applicable
+    if (data.want === "Request Customized Payment Plan") {
+      const activeChips = Array.from(document.querySelectorAll(".pref-chip.is-active")).map(c => c.textContent);
+      if (activeChips.length > 0) {
+        data.want += ` (Preferences: ${activeChips.join(", ")})`;
+      }
+    }
+
     submitLead(data, document.getElementById("leadStatus"));
   });
 
-  const callbackForm = document.getElementById("callbackForm");
-  callbackForm.addEventListener("submit", (e) => {
+  const pageLeadForm = document.getElementById("pageLeadForm");
+  pageLeadForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(callbackForm).entries());
-    data.want = "Request Callback";
-    submitLead(data, document.getElementById("callbackStatus"));
+    const data = Object.fromEntries(new FormData(pageLeadForm).entries());
+    data.want = "Lead Capture Form";
+    submitLead(data, document.getElementById("pageLeadStatus"));
   });
 });
