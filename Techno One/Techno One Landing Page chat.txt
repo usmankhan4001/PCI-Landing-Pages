@@ -1,0 +1,1321 @@
+
+
+Today 5:36 PM
+WhatsApp Image 2026-07-14 at 1.13.53 PM.jpeg
+WhatsApp Image 2026-07-14 at 1.13.52 PM.jpeg
+WhatsApp Image 2026-07-14 at 1.13.53 PM (1).jpeg
+WhatsApp Image 2026-07-14 at 1.13.53 PM (2).jpeg
+based on all these lets create a wireframe or drawing structure of a real estate commercial project landing page ask away as many qyuestions as you want
+
+Great. I’m seeing a premium, editorial real-estate landing page with large architectural visuals, clean typography, modular content blocks, strong investment information, and repeated conversion points.
+
+Please answer the following. Brief answers are enough; anything left blank will be handled using a sensible real-estate default.
+
+1. Project identity
+What is the project name?
+
+Is there a tagline or positioning statement?
+
+Who is the developer?
+
+Who is marketing or selling the project?
+
+Is this an exclusive sales mandate?
+
+What is the project type?
+
+Commercial plaza
+
+Corporate offices
+
+Retail shops
+
+Mixed-use
+
+Hotel apartments
+
+Food court
+
+Medical complex
+
+Other
+
+Is it one building or a larger development?
+
+What is the current construction status?
+
+What is the expected possession or completion date?
+
+Is the project approved by the relevant authority? Which authority?
+
+2. Primary landing-page objective
+What is the single most important conversion?
+
+WhatsApp inquiry
+
+Book a consultation
+
+Schedule a site visit
+
+Download brochure
+
+Request payment plan
+
+Get price list
+
+Submit lead form
+
+Call sales advisor
+
+What should the secondary conversion be?
+
+Should users receive the brochure instantly or after submitting their details?
+
+Should the page qualify leads before sending them to sales?
+
+Should users be able to choose their interest, such as shop, office, investment or business use?
+
+Should the page display prices openly or use “Request Price”?
+
+Should the payment plan be publicly visible?
+
+Should there be a sticky WhatsApp button?
+
+Should mobile users get a sticky bottom bar with Call, WhatsApp and Book Visit?
+
+3. Target audience
+Who is the main target audience?
+
+Investors
+
+Business owners
+
+Retail brands
+
+Corporate companies
+
+Doctors and clinics
+
+Restaurants and cafés
+
+Overseas Pakistanis
+
+Local property buyers
+
+Rental-income investors
+
+Which audience is the highest priority?
+
+What is their approximate investment range?
+
+Are buyers primarily from Islamabad/Rawalpindi, other Pakistani cities, or overseas?
+
+Is the project positioned for rental income, capital appreciation, business operations, prestige, or a combination?
+
+What is the strongest concern buyers normally have?
+
+What is the strongest reason they should invest now?
+
+Is the campaign targeting experienced investors or first-time buyers?
+
+4. Hero section
+What should appear above the fold?
+
+Full building render
+
+Aerial location view
+
+Lifestyle image
+
+Cinematic video
+
+3D building animation
+
+Split layout with image and information
+
+What is the strongest hero headline?
+
+What three facts should appear immediately under the headline?
+
+Should the starting price appear in the hero?
+
+Should the monthly installment appear in the hero?
+
+Should the location appear prominently?
+
+Should we mention possession or construction status?
+
+Should the hero include a short lead form?
+
+Should there be two hero buttons, such as “Get Payment Plan” and “Book a Site Visit”?
+
+Do you have a project video for the hero?
+
+Should the first screen feel more:
+
+Luxury
+
+Corporate
+
+Investment-focused
+
+Architectural
+
+Bold and sales-driven
+
+Minimal and sophisticated
+
+5. Core project facts
+What is the plot size?
+
+How many floors are there?
+
+How many basements?
+
+How many retail floors?
+
+How many office floors?
+
+Is there a rooftop, food court or recreational area?
+
+What unit sizes are available?
+
+What is the price per square foot?
+
+What is the minimum total unit price?
+
+What is the booking percentage?
+
+What is the installment duration?
+
+Are there quarterly, monthly or half-yearly payments?
+
+Is there a possession payment?
+
+Are there corner, park-facing, boulevard-facing or premium-location charges?
+
+Is there a guaranteed rental offer?
+
+Is there a buyback, leaseback or property-management service?
+
+Are units freehold?
+
+Are there any limited-time incentives?
+
+6. Unique selling points
+What are the five strongest project advantages?
+
+What makes this project different from nearby commercial projects?
+
+Is the architecture a major selling point?
+
+Is the location the strongest selling point?
+
+Is it located on a main boulevard or corner plot?
+
+Does it have high visibility or strong footfall?
+
+Is it surrounded by an established residential population?
+
+Are national or international brands nearby?
+
+Are there expected rental-yield figures?
+
+Are there expected capital-appreciation figures?
+
+Can these claims be supported with evidence?
+
+Is there a recognizable architect, consultant or construction company involved?
+
+Does the project have any sustainability features?
+
+Is there solar power, smart building management or energy-efficient glazing?
+
+7. Location section
+What is the exact location?
+
+Which landmark should be used as the main reference?
+
+Which nearby locations matter most?
+
+What travel-time claims can we use?
+
+Do you have a location map?
+
+Should the page include an interactive Google Map?
+
+Should the location section show travel times as cards?
+
+Should we include an aerial master-plan image?
+
+Do you want a “Why this location?” investment explanation?
+
+Should nearby residential population, commercial activity or future developments be mentioned?
+
+Is there any major road, interchange, airport, mall, school or hospital nearby?
+
+8. Unit types and inventory
+What unit categories are available?
+
+Should every category have its own card?
+
+Should cards include:
+
+Size
+
+Starting price
+
+Floor
+
+Use case
+
+Expected rent
+
+Payment plan
+
+Floor plan
+
+Are multiple floor plans available?
+
+Should users be able to filter inventory by unit type, floor, size or budget?
+
+Should availability be shown as live inventory?
+
+Should sold-out units remain visible?
+
+Do you want a visual floor selector?
+
+Should the page show typical plans only or exact unit numbers?
+
+Can users reserve a specific unit online, or only submit an inquiry?
+
+9. Investment section
+Should there be a dedicated “Investment Potential” section?
+
+What is the expected rental yield?
+
+What is the expected appreciation period?
+
+Do you have rental comparisons from nearby projects?
+
+Should we include an ROI calculator?
+
+Should the calculator estimate:
+
+Monthly installment
+
+Annual rental income
+
+Rental yield
+
+Appreciation
+
+Total return
+
+Are the figures official projections or marketing estimates?
+
+Should we compare buying a unit with bank savings, residential property or nearby commercial projects?
+
+Is there a strong urgency angle such as pre-launch rates, inventory scarcity or construction-linked price increases?
+
+10. Amenities and building features
+Which facilities are available?
+
+Dedicated parking
+
+Valet parking
+
+High-speed elevators
+
+Escalators
+
+Backup power
+
+Solar power
+
+Central HVAC
+
+CCTV
+
+Fire safety
+
+Security
+
+Reception
+
+Facility management
+
+Prayer area
+
+Rooftop
+
+Food court
+
+Business lounge
+
+Conference rooms
+
+Smart access
+
+Cargo lift
+
+Separate office entrance
+
+Which five features deserve visual emphasis?
+
+Are facilities different for retail and office users?
+
+Is parking allocation included or sold separately?
+
+How many parking spaces are available?
+
+Are there separate entrances for retail, offices and services?
+
+Should the amenities be displayed as icons, architectural diagrams, image cards or a combination?
+
+11. Visual assets
+What assets are currently available?
+
+Exterior renders
+
+Interior renders
+
+Rooftop renders
+
+Aerial images
+
+Location map
+
+Floor plans
+
+Construction images
+
+Walkthrough video
+
+Drone footage
+
+Developer photographs
+
+Which render should be the main hero image?
+
+Do you have daytime and nighttime renders?
+
+Should the page alternate between white sections and full-width image sections?
+
+Should images use sharp rectangles or rounded corners?
+
+Should the gallery open in a full-screen viewer?
+
+Should the page include before/after construction progress?
+
+Do you need placeholders in the wireframe for visuals that have not yet been produced?
+
+Should the page use real photography, CGI renders or both?
+
+12. Developer and trust
+How many years of experience does the developer have?
+
+How many projects have they completed?
+
+Are there completed projects we can feature?
+
+Are there existing clients, tenants or brands we can mention?
+
+Are there testimonials?
+
+Are video testimonials available?
+
+Are there media mentions or awards?
+
+Should the developer story be short or detailed?
+
+Should team members appear on the page?
+
+Should legal approvals and NOCs be shown visually?
+
+Should the page include partner, consultant, architect and contractor logos?
+
+Is there a construction-progress timeline?
+
+13. Lead form and qualification
+What information should the lead form collect?
+
+Name
+
+Phone
+
+WhatsApp number
+
+Email
+
+City
+
+Budget
+
+Unit preference
+
+Purpose of purchase
+
+Preferred contact time
+
+Site-visit date
+
+What is the minimum information needed before a salesperson contacts them?
+
+Should the form be one step or multi-step?
+
+Should it begin with a simple question such as “What are you interested in?”
+
+Should users choose between investment, own business and rental income?
+
+Should the form ask for budget?
+
+Should the page show the salesperson’s photo and name?
+
+Should leads go into Bitrix24?
+
+Should WhatsApp conversations be automated through WAHA or n8n?
+
+Should different interests route to different sales agents?
+
+What happens after form submission?
+
+Do you have a thank-you page?
+
+Should the user instantly receive the brochure and payment plan through WhatsApp?
+
+14. Page structure preferences
+Should the page be concise, around 8–10 sections, or detailed, around 15–20 sections?
+
+Do you prefer a storytelling flow or a direct sales flow?
+
+Should the page begin with project emotion and architecture or investment numbers?
+
+Should the location appear before the project features?
+
+Should the payment plan appear early or near the end?
+
+Should the developer profile appear near the top or near the bottom?
+
+Should every major section include a CTA?
+
+Do you want a final FAQ section?
+
+Should there be a strong final closing section with a full-screen project render?
+
+15. Navigation
+Should the header remain fixed while scrolling?
+
+Which navigation links should appear?
+
+Should the header initially be transparent over the hero?
+
+Should there be a prominent “Get Details” button in the header?
+
+Do you need language options?
+
+Which languages?
+
+Should the landing page contain a full footer or a minimal campaign footer?
+
+Should the page show office address, phone, email, social channels and Google Maps link?
+
+16. Content tone
+Should the writing be in English, Urdu, Roman Urdu or bilingual?
+
+Should the tone feel:
+
+Premium and restrained
+
+Confident and corporate
+
+Urgent and sales-focused
+
+Informative and investment-led
+
+Emotional and lifestyle-led
+
+Should headlines be very short and dramatic or more descriptive?
+
+Should technical specifications be detailed?
+
+Are there any words or claims that must not be used?
+
+Should terms like “guaranteed return,” “secure investment” or “high ROI” be avoided unless formally supported?
+
+17. Visual direction
+What are the brand colours?
+
+Do you have brand guidelines?
+
+What is the logo format?
+
+Which of the supplied references is closest to the desired direction:
+
+Reference 1: blue corporate and architectural
+
+Reference 2: minimal editorial and luxury
+
+Reference 3: dark green investment brochure
+
+Reference 4: modular black-and-white presentation system
+
+Should the design use a light or dark background?
+
+Should accent colours come from the project façade?
+
+Should the typography feel modern geometric, editorial or corporate?
+
+Should the wireframe remain fully black-and-white or include approximate colour blocks?
+
+Should the structure use conventional rectangular sections or an asymmetrical editorial grid?
+
+How rounded should the cards be?
+
+Should the page feel spacious and premium or information-dense?
+
+18. Mobile experience
+What percentage of traffic is expected from mobile?
+
+Should the mobile version be designed first?
+
+Should large tables become swipeable cards on mobile?
+
+Should floor plans be zoomable?
+
+Should the lead form open in a full-screen mobile sheet?
+
+Should the sticky mobile CTA contain:
+
+WhatsApp
+
+Call
+
+Get Payment Plan
+
+Book Visit
+
+Should videos autoplay on mobile?
+
+Should heavy animations be avoided for faster loading?
+
+19. Technical requirements
+Which platform will be used?
+
+WordPress
+
+Webflow
+
+Framer
+
+Custom React/Next.js
+
+Other
+
+Is the landing page part of the existing PCI website?
+
+Is a separate campaign domain or subdomain needed?
+
+Is Meta Pixel already installed?
+
+Is Google Analytics installed?
+
+Is Google Ads conversion tracking required?
+
+Is TikTok Pixel required?
+
+Do you need server-side tracking or Meta CAPI?
+
+Should calls, WhatsApp clicks, brochure downloads and form submissions all be tracked separately?
+
+What is the desired page-load speed?
+
+Do you need SEO content or is this purely an advertising landing page?
+
+Will there be separate landing pages for different audiences or ad angles?
+
+20. Final wireframe deliverable
+Should I create:
+
+One complete desktop wireframe
+
+Desktop and mobile wireframes
+
+A long-page visual diagram
+
+Section-by-section screens
+
+Low-fidelity black-and-white wireframe
+
+Medium-fidelity wireframe with sample images and text
+
+What canvas size should be used?
+
+Should the wireframe include real project copy or placeholder labels?
+
+Should I label each section with its purpose and conversion logic?
+
+Should I show animation and interaction notes?
+
+Should I include the header, popups, brochure form and thank-you screen?
+
+Do you need the structure only, or should I also create the final UI design after wireframe approval?
+
+The most important answers to begin are: project name, project type, location, target audience, available unit types, primary CTA, key selling points, payment plan, visual direction and preferred wireframe format.
+
+
+Generated image: Real estate project wireframe layout
+
+
+Edit
+
+
+Section 7 — Developer Legacy
+This section should build confidence without becoming a conventional “About the Developer” page filled with corporate paragraphs.
+
+The visitor should understand:
+
+who stands behind the project
+
+what they have delivered
+
+how long they have operated
+
+why they can be trusted
+
+what their previous work looks like
+
+Core concept: A Legacy Built in Concrete
+Use a strong combination of:
+
+Developer identity
+
+Large credibility figures
+
+Selected project portfolio
+
+Timeline or legacy statement
+
+Proof elements
+
+Desktop Structure
+┌────────────────────────────────────────────────────────────────────────┐
+│ 06 / DEVELOPER LEGACY                                                  │
+│                                                                        │
+│ BUILT ON EXPERIENCE.                    A concise introduction to the   │
+│ DEFINED BY DELIVERY.                    developer’s vision, experience  │
+│                                         and delivery record.            │
+├──────────────────────────────┬─────────────────────────────────────────┤
+│                              │                                         │
+│  DEVELOPER LOGO /            │  LARGE LEGACY STATEMENT                 │
+│  BRAND MARK                  │                                         │
+│                              │  Short brand story or philosophy        │
+│  ESTABLISHED /               │  across three to four lines.            │
+│  YEARS PLACEHOLDER           │                                         │
+│                              │  [ DISCOVER THE DEVELOPER → ]           │
+├──────────────────────────────┴─────────────────────────────────────────┤
+│                                                                        │
+│      LARGE NUMBER          LARGE NUMBER          LARGE NUMBER          │
+│      Years of experience   Projects delivered   Area developed        │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────┤
+│ SELECTED DEVELOPMENTS                                                  │
+│                                                                        │
+│ ┌─────────────────────────────┐ ┌────────────────────────────────────┐ │
+│ │                             │ │                                    │ │
+│ │   FEATURED PROJECT IMAGE    │ │     SECONDARY PROJECT IMAGE        │ │
+│ │                             │ │                                    │ │
+│ │ Project title / status      │ │ Project title / status             │ │
+│ └─────────────────────────────┘ └────────────────────────────────────┘ │
+│                                                                        │
+│                          [ VIEW PROJECT PORTFOLIO ]                     │
+├───────────────────────────────┬────────────────────────────────────────┤
+│ DELIVERY TIMELINE             │ TRUST & CREDENTIALS                    │
+│                               │                                        │
+│ Year ─ Milestone              │ [ Approval / Membership ]              │
+│ Year ─ Milestone              │ [ Consultant / Partner ]               │
+│ Year ─ Milestone              │ [ Award / Recognition ]                │
+└───────────────────────────────┴────────────────────────────────────────┘
+Main Heading Treatment
+Avoid generic headings such as:
+
+About the Developer
+
+Our Company
+
+Who We Are
+
+Use a stronger editorial statement:
+
+A LEGACY
+OF DELIVERY
+or:
+
+EXPERIENCE
+YOU CAN BUILD ON
+The developer name or founding year can appear as oversized faded typography behind the section.
+
+Developer Identity Module
+This should contain:
+
+developer logo
+
+company name
+
+founding year
+
+short positioning line
+
+one concise paragraph
+
+subtle profile link
+
+Do not place the logo inside a tiny card. Give it enough whitespace so it feels established and premium.
+
+Credibility Figures
+Use three or four large figures only.
+
+XX+
+YEARS
+
+XX+
+PROJECTS
+
+XX M
+SQ. FT.
+
+XX+
+CLIENTS
+The numbers should be large graphic elements rather than small dashboard cards.
+
+On desktop, they may stretch across the width of the section with thin separators.
+
+Selected Projects
+Show only two or three strong previous developments.
+
+Each project module may include:
+
+large image
+
+project name
+
+location
+
+project type
+
+completion status
+
+one short proof statement
+
+Avoid showing six tiny project thumbnails. The section should communicate quality, not volume.
+
+Preferred arrangement
+One large featured project and one or two smaller supporting projects:
+
+┌──────────────────────────────┬───────────────┐
+│                              │ Project 02    │
+│     FEATURED PROJECT         ├───────────────┤
+│                              │ Project 03    │
+└──────────────────────────────┴───────────────┘
+This arrangement better matches the editorial references.
+
+Legacy Timeline
+A compact timeline can show:
+
+company established
+
+first major project
+
+expansion milestone
+
+current development
+
+future vision
+
+FOUNDATION ─── DELIVERY ─── EXPANSION ─── PRESENT
+This should remain concise. It is a visual proof element, not a detailed company history.
+
+Trust and Credentials
+Possible placeholders:
+
+authority approvals
+
+professional memberships
+
+architecture partner
+
+construction partner
+
+awards
+
+delivery certifications
+
+banking or institutional relationships
+
+Use real credentials only in the final content.
+
+Logos should appear in a muted monochrome strip rather than colourful promotional tiles.
+
+Mobile Structure
+┌──────────────────────────────┐
+│ 06 / DEVELOPER LEGACY        │
+│                              │
+│ A LEGACY                     │
+│ OF DELIVERY                  │
+│                              │
+│ Short introductory copy.     │
+│                              │
+│ DEVELOPER LOGO               │
+│ Established / identity       │
+│                              │
+│ XX+       XX+                │
+│ Years     Projects           │
+│                              │
+│ XX M      XX+                │
+│ Sq. ft.   Clients            │
+│                              │
+│ ┌──────────────────────────┐ │
+│ │ FEATURED PROJECT IMAGE   │ │
+│ │ Project title / status   │ │
+│ └──────────────────────────┘ │
+│                              │
+│ Swipe previous projects →    │
+│                              │
+│ LEGACY TIMELINE              │
+│ ● Foundation                 │
+│ │                            │
+│ ● Growth                     │
+│ │                            │
+│ ● Major Delivery             │
+│ │                            │
+│ ● Current Project            │
+│                              │
+│ TRUSTED PARTNERS / LOGOS     │
+│ [Logo] [Logo] [Logo] →       │
+│                              │
+│ [ EXPLORE DEVELOPER ]        │
+└──────────────────────────────┘
+On mobile:
+
+statistics use a two-column arrangement
+
+previous projects become swipeable
+
+timeline becomes vertical
+
+partner logos become a horizontal strip
+
+no long biography
+
+CTA Strategy
+Primary contextual action:
+
+Explore Developer Portfolio
+
+Secondary text action:
+
+View Completed Projects →
+
+This section should not contain a lead form. Its role is trust-building before the final conversion.
+
+Section 8 — Final Conversion CTA
+This is the most important conversion section after the hero.
+
+It should not feel like another ordinary contact form. It should bring together:
+
+brochure
+
+customized payment plan
+
+availability
+
+site visit
+
+WhatsApp consultation
+
+Core concept: Your Next Step Starts Here
+Use a strong architectural image, a concise decision statement and a simplified action panel.
+
+Desktop Structure
+┌────────────────────────────────────────────────────────────────────────┐
+│ 07 / TAKE THE NEXT STEP                                                │
+│                                                                        │
+│ ┌────────────────────────────────────┬────────────────────────────────┐ │
+│ │                                    │                                │ │
+│ │                                    │  READY TO EXPLORE              │ │
+│ │       LARGE FINAL PROJECT          │  THE OPPORTUNITY?              │ │
+│ │       RENDER / ENVIRONMENT         │                                │ │
+│ │                                    │  Select how you would like     │ │
+│ │                                    │  to continue.                  │ │
+│ │                                    │                                │ │
+│ │                                    │  [ DOWNLOAD BROCHURE ]         │ │
+│ │                                    │  [ REQUEST CUSTOM PLAN ]       │ │
+│ │                                    │  [ WHATSAPP ADVISOR ]          │ │
+│ │                                    │                                │ │
+│ └────────────────────────────────────┴────────────────────────────────┘ │
+│                                                                        │
+│                  OR REQUEST A PERSONAL CALLBACK                        │
+│                                                                        │
+│ [ Name ]  [ WhatsApp Number ]  [ Interest ▼ ]  [ REQUEST CALLBACK ]   │
+└────────────────────────────────────────────────────────────────────────┘
+Visual Direction
+The section should feel like a closing campaign poster.
+
+Use:
+
+one dramatic project render
+
+large headline
+
+minimal supporting copy
+
+no more than three action choices
+
+short callback form
+
+strong contrast from the previous section
+
+The render can occupy the full background with a clean content panel placed over the negative space, or it can use a split editorial composition.
+
+Recommended CTA Hierarchy
+Primary CTA
+Download Brochure
+
+This remains the strongest page-wide action.
+
+Secondary CTA
+Request Customized Payment Plan
+
+This targets serious investors who need:
+
+custom down payment
+
+different installment duration
+
+flexible payment frequency
+
+unit-specific plan
+
+Third Action
+Talk to an Advisor on WhatsApp
+
+This gives users an immediate human route.
+
+Avoid showing five equal buttons. The hierarchy should remain obvious.
+
+Optional Intent Selector
+Before submitting the callback form, users can identify their interest:
+
+I AM INTERESTED IN:
+
+[ Retail Unit ]
+[ Office Space ]
+[ Investment ]
+[ Customized Payment Plan ]
+[ Site Visit ]
+This can be a chip selector rather than a dropdown on mobile.
+
+Lead Form Structure
+Keep the form extremely short:
+
+Name
+WhatsApp Number
+Interest
+Preferred Contact Time — optional
+
+[ REQUEST CALLBACK ]
+Do not ask for email, city, budget and detailed message simultaneously.
+
+More qualification can happen through WhatsApp or the CRM follow-up.
+
+Mobile Structure
+┌──────────────────────────────┐
+│ 07 / TAKE THE NEXT STEP      │
+│                              │
+│ ┌──────────────────────────┐ │
+│ │                          │ │
+│ │   FINAL PROJECT RENDER   │ │
+│ │                          │ │
+│ └──────────────────────────┘ │
+│                              │
+│ READY TO EXPLORE             │
+│ THE OPPORTUNITY?             │
+│                              │
+│ Short closing statement.     │
+│                              │
+│ [ DOWNLOAD BROCHURE ]        │
+│ [ REQUEST CUSTOM PLAN ]      │
+│ [ WHATSAPP ADVISOR ]         │
+│                              │
+│ ───── OR REQUEST A CALL ──── │
+│                              │
+│ [ Name                    ]  │
+│ [ WhatsApp Number         ]  │
+│                              │
+│ I AM INTERESTED IN           │
+│ [Retail] [Office] [Plan] →   │
+│                              │
+│ [ REQUEST CALLBACK ]         │
+└──────────────────────────────┘
+Mobile Conversion Behaviour
+After the visitor enters the final section:
+
+the sticky mobile CTA may temporarily collapse
+
+the primary action remains Download Brochure
+
+WhatsApp remains visible but secondary
+
+the form should use large tap targets
+
+the keyboard should use the numeric phone layout
+
+the user should be able to complete the form within seconds
+
+After submission:
+
+confirm the selected request
+
+offer immediate WhatsApp continuation
+
+provide the brochure download
+
+create the lead in Bitrix24
+
+record the visitor’s selected interest
+
+Final CTA Background Options
+Option A — Full image
+Project render fills the entire section with text placed in the clean sky or negative-space area.
+
+Option B — Split editorial
+Render on one side and conversion panel on the other.
+
+Option C — Layered composition
+Building render in the centre, oversized faded project name behind it, CTAs arranged below.
+
+Recommended
+Use C on mobile and a mix of A and B on desktop.
+
+This mirrors the hero and gives the page a visually satisfying ending.
+
+Footer
+The footer should remain restrained. It should not introduce another heavy marketing section.
+
+Core concept: Minimal Corporate Closure
+Desktop Structure
+┌────────────────────────────────────────────────────────────────────────┐
+│                                                                        │
+│  PROJECT LOGO                     CONTACT                              │
+│  Short project positioning        Phone                               │
+│  statement.                       WhatsApp                             │
+│                                   Email                                │
+│                                   Sales office address                 │
+│                                                                        │
+│  PROJECT LINKS                    INFORMATION                          │
+│  Overview                         Privacy Policy                       │
+│  Layout Plans                     Terms & Conditions                   │
+│  Location                         Disclaimer                           │
+│  Payment Plan                     Project approvals                    │
+│  Amenities                                                             │
+│                                                                        │
+│  DEVELOPER LOGO        MARKETING / SALES PARTNER LOGO                  │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────┤
+│ © YEAR PROJECT / DEVELOPER       SOCIAL ICONS        BACK TO TOP ↑     │
+└────────────────────────────────────────────────────────────────────────┘
+Footer Content Groups
+Project identity
+project logo
+
+one-line description
+
+project location
+
+Quick navigation
+The Opportunity
+
+Layout Plans
+
+Location
+
+Payment Plan
+
+Amenities
+
+Developer Legacy
+
+Contact
+phone
+
+WhatsApp
+
+email
+
+sales office
+
+map link
+
+Legal
+privacy policy
+
+terms
+
+disclaimer
+
+approvals
+
+pricing disclaimer
+
+Brand relationships
+developer logo
+
+architect or consultant
+
+exclusive sales and marketing partner
+
+Only show relevant partners. Avoid filling the footer with unnecessary logos.
+
+Mobile Footer
+┌──────────────────────────────┐
+│ PROJECT LOGO                 │
+│ Short positioning statement │
+│                              │
+│ [ WHATSAPP ]  [ CALL ]       │
+│                              │
+│ PROJECT LINKS           +    │
+│ CONTACT                 +    │
+│ LEGAL                   +    │
+│                              │
+│ Developer Logo               │
+│ Sales Partner Logo           │
+│                              │
+│ Social icons                 │
+│                              │
+│ © Year. All rights reserved. │
+│                              │
+│ Back to top ↑                │
+└──────────────────────────────┘
+Use collapsible groups on mobile to prevent the footer from becoming too long.
+
+Sticky Mobile CTA
+Throughout most of the page, use:
+
+[ WhatsApp ]    [ Download Brochure ]
+When the visitor reaches the flexible payment-plan section, the secondary action may temporarily change to:
+
+[ WhatsApp ]    [ Request Custom Plan ]
+When the final CTA is fully visible, the sticky bar can collapse to avoid duplication.
+
+Final Landing Page Structure
+The complete flow is now:
+
+Hero
+
+Large headline
+
+Render
+
+Quick highlights
+
+Download Brochure
+
+WhatsApp CTA
+
+The Opportunity
+
+Investment-led introduction
+
+Project context
+
+Commercial concept
+
+Layout Plans
+
+Building stack
+
+Floor plans
+
+Unit layouts
+
+Availability CTA
+
+Interactive Locality Map
+
+Project-centred map
+
+Landmark travel times
+
+Location context
+
+Tentative & Flexible Payment Plan
+
+Floor or unit-based tentative plan
+
+Payment stages
+
+Customized DP and installment CTA
+
+Amenities
+
+Featured visual
+
+Amenity categories
+
+Technical building operations
+
+Developer Legacy
+
+Developer identity
+
+Key statistics
+
+Previous projects
+
+Timeline and credentials
+
+Final Conversion CTA
+
+Brochure
+
+Customized payment plan
+
+WhatsApp
+
+Callback form
+
+Footer
+
+Contact
+
+Project navigation
+
+Developer and sales partner
+
+Legal information
+
+This gives the page a focused story:
+
+Attention → Opportunity → Product → Location → Affordability → Experience → Trust → Conversion
+
+
+Good now create the wireframe in HTML
+
+Worked for 5m 1s
+Created the responsive, mobile-first HTML wireframe with all approved sections, placeholder visuals, floor switching, locality-map structure, tentative payment plans, flexible-plan CTAs, amenities, developer legacy, final CTA, sticky navigation and mobile action bar.
+
+commercial_real_estate_landing_wireframe.html
+
+Open it directly in Chrome or Edge to review the responsive desktop and mobile layouts.
+
+
+
+just give detailed doc now for the landing page structure as we discussed
+
+
+Analyzed
+The detailed 25-page landing page structure and UX specification is ready. It includes the full desktop and mobile structure, section wireframes, modules, CTA hierarchy, interaction behavior, content placement, responsive rules, lead-capture logic, tracking events and QA checklist.
+
+commercial_real_estate_landing_page_structure.docx 
+
+
