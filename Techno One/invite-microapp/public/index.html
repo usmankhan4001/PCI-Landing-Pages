@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno One Invite Exporter</title>
+<meta name="description" content="Add a recipient name to the Techno One launch invitation and export it as PNG or JPG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="app-shell">
+  <section class="panel editor-panel" aria-labelledby="editorTitle">
+    <p class="eyebrow">Techno One Launch</p>
+    <h1 id="editorTitle">Invite name exporter</h1>
+    <p class="intro">Type a recipient name. The app keeps the original artwork unchanged and only adds the name at the assigned place.</p>
+
+    <form class="invite-form" id="inviteForm">
+      <label class="field">
+        <span>Recipient name</span>
+        <input id="recipientName" name="recipientName" type="text" placeholder="e.g. Mr. Ahmed Khan" autocomplete="name" autofocus>
+      </label>
+
+      <div class="actions" aria-label="Export actions">
+        <button class="primary-btn" type="button" id="downloadPng">Export PNG</button>
+        <button class="secondary-btn" type="button" id="downloadJpg">Export JPG</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="preview-panel" aria-labelledby="previewTitle">
+    <div class="preview-head">
+      <div>
+        <p class="eyebrow">Live Preview</p>
+        <h2 id="previewTitle">Original artwork export</h2>
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <canvas id="inviteCanvas" width="5244" height="7440" aria-label="Personalized Techno One invitation preview"></canvas>
+    </div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
