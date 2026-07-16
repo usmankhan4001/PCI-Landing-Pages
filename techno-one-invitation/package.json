@@ -1,0 +1,15 @@
+{
+  "name": "techno-one-invite-microapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone Techno One invitation name overlay and PNG/JPG exporter.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
