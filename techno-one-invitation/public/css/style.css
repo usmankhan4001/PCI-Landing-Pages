@@ -18,13 +18,15 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(152, 205, 232, 0.22), transparent 34rem),
-    linear-gradient(135deg, #07192b 0%, #0e2c49 42%, #f5f2ea 42%, #f5f2ea 100%);
+    radial-gradient(circle at top right, rgba(40, 118, 167, 0.15), transparent 40rem),
+    radial-gradient(circle at bottom left, rgba(20, 69, 105, 0.2), transparent 40rem),
+    linear-gradient(135deg, #020b14 0%, #07192b 100%);
   -webkit-font-smoothing: antialiased;
 }
 
 button,
-input { font: inherit; }
+input,
+textarea { font: inherit; }
 
 button { cursor: pointer; }
 
@@ -39,9 +41,9 @@ button { cursor: pointer; }
 }
 
 .panel {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 28px;
-  box-shadow: 0 32px 80px rgba(7, 25, 43, 0.18);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.35);
 }
 
 .editor-panel {
@@ -58,10 +60,11 @@ button { cursor: pointer; }
 
 .mode-tabs {
   display: flex;
-  background: rgba(13, 32, 54, 0.04);
+  background: #f0f2f5;
   border-radius: 99px;
-  padding: 4px;
+  padding: 5px;
   margin-bottom: 24px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
 }
 
 .tab-btn {
@@ -76,13 +79,14 @@ button { cursor: pointer; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
 .tab-btn.is-active {
   background: #fff;
   color: var(--blue);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.04);
 }
 
 .tab-btn:hover:not(.is-active) {
@@ -233,7 +237,8 @@ h2 { font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: var(--ink); }
 
 .preview-panel {
   padding: clamp(24px, 4vw, 36px);
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px);
 }
 
 .preview-head {
