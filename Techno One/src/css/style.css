@@ -459,6 +459,7 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
 .units-summary .stat { padding: 30px 24px; border-right: 1px solid var(--line-ondark); text-align: center; }
 .units-summary .stat:last-child { border-right: none; }
 .units-summary .stat b { display: block; font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; color: #fff; }
+.units-summary .stat.is-price b { font-size: clamp(15px, 1.6vw, 21px); white-space: nowrap; line-height: 1.6; }
 .units-summary .stat span { display: block; margin-top: 6px; font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-label); }
 
 /* ================= 06 PAYMENT PLAN ================= */
