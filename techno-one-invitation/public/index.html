@@ -13,19 +13,29 @@
 <body>
 <main class="app-shell">
   <section class="panel editor-panel" aria-labelledby="editorTitle">
-    <p class="eyebrow">Techno One Launch</p>
-    <h1 id="editorTitle">Invite name exporter</h1>
-    <p class="intro">Type a recipient name. The app keeps the original artwork unchanged and only adds the name at the assigned place.</p>
+    <div class="brand-header">
+      <p class="eyebrow">Techno One Launch</p>
+      <h1 id="editorTitle">Invite Generator</h1>
+      <p class="intro">Create a personalized digital invitation in seconds. Type the recipient's name below to generate a beautiful, print-ready image.</p>
+    </div>
 
     <form class="invite-form" id="inviteForm">
       <label class="field">
-        <span>Recipient name</span>
-        <input id="recipientName" name="recipientName" type="text" placeholder="e.g. Mr. Ahmed Khan" autocomplete="name" autofocus>
+        <span>Recipient Name</span>
+        <div class="input-wrapper">
+          <input id="recipientName" name="recipientName" type="text" placeholder="e.g. Mr. Ahmed Khan" autocomplete="name" autofocus>
+        </div>
       </label>
 
       <div class="actions" aria-label="Export actions">
-        <button class="primary-btn" type="button" id="downloadPng">Export PNG</button>
-        <button class="secondary-btn" type="button" id="downloadJpg">Export JPG</button>
+        <button class="primary-btn" type="button" id="downloadPng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export PNG
+        </button>
+        <button class="secondary-btn" type="button" id="downloadJpg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export JPG
+        </button>
       </div>
     </form>
   </section>
@@ -34,7 +44,7 @@
     <div class="preview-head">
       <div>
         <p class="eyebrow">Live Preview</p>
-        <h2 id="previewTitle">Original artwork export</h2>
+        <h2 id="previewTitle">High-Resolution Canvas</h2>
       </div>
     </div>
     <div class="canvas-frame">

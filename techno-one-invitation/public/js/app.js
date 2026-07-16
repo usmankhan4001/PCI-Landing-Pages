@@ -6,12 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadJpg = document.getElementById("downloadJpg");
 
   const artwork = new Image();
-  artwork.onload = () => {
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(drawInvite);
-    } else {
-      drawInvite();
+  artwork.onload = async () => {
+    try {
+      if (document.fonts) {
+        await document.fonts.load('800 142px Montserrat');
+      }
+    } catch (e) {
+      console.warn('Font loading error:', e);
     }
+    drawInvite();
   };
   artwork.src = "assets/realtor-invitation.jpeg";
 
@@ -28,15 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ctx.save();
     ctx.textAlign = "left";
-    ctx.textBaseline = "middle";
+    ctx.textBaseline = "alphabetic";
     ctx.fillStyle = "#fff";
     ctx.shadowColor = "rgba(0, 0, 0, 0.22)";
     ctx.shadowBlur = 24;
     ctx.shadowOffsetY = 6;
 
-    const x = 2038;
-    const y = 988;
-    const maxWidth = 2300;
+    const x = 2055;
+    const y = 1035;
+    const maxWidth = 2280;
     let fontSize = 142;
 
     do {
@@ -64,6 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link.click();
       link.remove();
       URL.revokeObjectURL(url);
-    }, type, 0.95);
+    }, type, 0.98);
   }
 });
