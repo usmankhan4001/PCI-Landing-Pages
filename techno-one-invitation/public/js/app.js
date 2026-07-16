@@ -34,15 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.shadowBlur = 24;
     ctx.shadowOffsetY = 6;
 
-    const x = 1950;
-    const y = 985;
-    const maxWidth = 2500;
-    let fontSize = 156;
+    const x = 2038;
+    const y = 988;
+    const maxWidth = 2300;
+    let fontSize = 142;
 
     do {
       ctx.font = `800 ${fontSize}px Montserrat, Arial, sans-serif`;
       fontSize -= 2;
-    } while (ctx.measureText(recipient).width > maxWidth && fontSize > 96);
+    } while (ctx.measureText(recipient).width > maxWidth && fontSize > 88);
 
     ctx.fillText(recipient, x, y, maxWidth);
     ctx.restore();
