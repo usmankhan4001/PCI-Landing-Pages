@@ -1,6 +1,6 @@
 // Techno One landing page interactions: header scroll state, mobile menu,
 // lead modal, floor-plan viewer, payment tabs, FAQ accordion, sticky
-// mobile actions, and lead form submission (modal, quick-lead strip,
+// mobile actions, and lead form submission (hero form, modal, and the
 // dedicated lead-capture section).
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -208,5 +208,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = Object.fromEntries(new FormData(pageLeadForm).entries());
     data.want = "Lead Capture Form";
     submitLead(data, document.getElementById("pageLeadStatus"));
+  });
+
+  const heroLeadForm = document.getElementById("heroLeadForm");
+  heroLeadForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(heroLeadForm).entries());
+    data.want = "Hero Enquiry";
+    submitLead(data, document.getElementById("heroLeadStatus"));
   });
 });

@@ -54,19 +54,33 @@
   </picture>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-content">
-    <div class="hero-text">
-      <div class="hero-kicker">Premier Choice International — DHA Phase 1, Islamabad</div>
-      <h1 class="display">Some Buildings Are Occupied.<br><span class="accent">Few Are Remembered.</span></h1>
-      <p class="lead">Techno One is DHA Phase 1's next commercial landmark — retail, offices and rooftop dining under one address. Built for the businesses of tomorrow.</p>
-      <div class="hero-ctas">
-        <button type="button" class="btn btn-primary" data-open-modal="leadModal">Download Brochure</button>
-        <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Now</a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-kicker">Premier Choice International — DHA Phase 1, Islamabad</div>
+        <h1 class="display">Some Buildings Are Occupied.<br><span class="accent">Few Are Remembered.</span></h1>
+        <p class="lead">Techno One is DHA Phase 1's next commercial landmark — retail, offices and rooftop dining under one address. Built for the businesses of tomorrow.</p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-primary" data-open-modal="leadModal">Download Brochure</button>
+          <a href="https://wa.me/923011233333" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Now</a>
+        </div>
+        <div class="hero-tags">
+          <span>Orchard Boulevard</span>
+          <span>DHA Phase 1, Islamabad</span>
+          <span>MLR Road Frontage</span>
+          <span>LG+G+M+4+Rooftop</span>
+        </div>
       </div>
-      <div class="hero-tags">
-        <span>Orchard Boulevard</span>
-        <span>DHA Phase 1, Islamabad</span>
-        <span>MLR Road Frontage</span>
-        <span>LG+G+M+4+Rooftop</span>
+      <div class="hero-form-card">
+        <h3 class="display">Get Payment Plan &amp; Availability</h3>
+        <p class="sub">Share your details — our sales team responds within a few hours.</p>
+        <form id="heroLeadForm">
+          <div class="form-field"><label for="heroName">Full Name</label><input id="heroName" name="name" type="text" required placeholder="Your full name"></div>
+          <div class="form-field"><label for="heroPhone">Phone / WhatsApp</label><input id="heroPhone" name="phone" type="tel" required placeholder="03XX XXXXXXX"></div>
+          <div class="form-field"><label for="heroEmail">Email Address</label><input id="heroEmail" name="email" type="email" required placeholder="you@example.com"></div>
+          <button type="submit" class="btn btn-primary btn-block">Request Details</button>
+          <p class="form-note">By submitting, you agree to be contacted by our sales team regarding Techno One.</p>
+          <div class="form-status" id="heroLeadStatus"></div>
+        </form>
       </div>
     </div>
   </div>
