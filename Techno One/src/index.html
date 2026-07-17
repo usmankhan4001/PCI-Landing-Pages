@@ -439,7 +439,7 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
         </div>
 
         <div class="floor-plan-panel" style="position: relative;">
-          <div class="plan-real-content" style="filter: blur(8px); pointer-events: none; user-select: none; opacity: 0.6;">
+          <div class="plan-real-content">
             <div class="plan-view-head">
               <h3 class="display" id="planTitle">Ground Floor</h3>
               <div class="plan-meta">
@@ -457,12 +457,6 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
               <span><i class="dot-office"></i> Corporate Office</span>
               <span><i class="dot-rooftop"></i> Rooftop Restaurant</span>
             </div>
-          </div>
-          <div class="floor-plan-lock" id="floorPlanLock" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.7); backdrop-filter: blur(4px); z-index: 10; text-align: center; padding: 30px; border-radius: 4px;">
-            <svg class="lock-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-bottom: 16px;"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
-            <h3 class="display" style="font-size: 24px; font-weight: 600;">Unlock Floor Plans</h3>
-            <p class="body-copy" style="margin: 12px 0 24px;">Submit your details once to view real floor plans, unit counts and availability for every level.</p>
-            <button type="button" class="btn btn-primary" data-open-modal="leadModal" data-modal-title="Unlock Floor Plans" data-unlock-target="plans">Unlock Floor Plans</button>
           </div>
         </div>
       </div>

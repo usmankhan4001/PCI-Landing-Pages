@@ -749,20 +749,6 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
 
 /* ---------- Brand Consistency and Micro-Interactions (Audit Refinements) ---------- */
 
-/* Floor Plan Gate Animations */
-.floor-plan-lock {
-  box-shadow: inset 0 0 40px rgba(13, 32, 54, 0.05);
-}
-.floor-plan-lock .lock-icon {
-  animation: lock-pulse 2s infinite ease-in-out;
-  color: var(--accent);
-}
-@keyframes lock-pulse {
-  0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(40, 118, 167, 0)); }
-  50% { transform: scale(1.12); filter: drop-shadow(0 0 8px rgba(40, 118, 167, 0.45)); }
-  100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(40, 118, 167, 0)); }
-}
-
 /* Modal Consistency Override */
 .modal-box {
   border-top: 4px solid var(--accent);
