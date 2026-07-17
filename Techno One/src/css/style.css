@@ -507,10 +507,10 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
 .amenity-feature .media img { width: 100%; height: clamp(340px, 34vw, 460px); object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
 .amenity-feature .strip { margin-top: 26px; font-family: var(--font-label); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
 
-.amenity-icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); margin-top: 56px; overflow: hidden; }
+.amenity-icon-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); margin-top: 56px; overflow: hidden; background: #fff; }
 .amenity-icon-grid > div { padding: 32px 22px; text-align: center; display: flex; flex-direction: column; align-items: center; border-right: 1px solid var(--line); border-top: 1px solid var(--line); }
-.amenity-icon-grid > div:nth-child(-n+4) { border-top: none; }
-.amenity-icon-grid > div:nth-child(4n) { border-right: none; }
+.amenity-icon-grid > div:nth-child(-n+5) { border-top: none; }
+.amenity-icon-grid > div:nth-child(5n) { border-right: none; }
 .amenity-icon-grid .ic { color: var(--accent); margin-bottom: 16px; }
 .amenity-icon-grid .label { font-size: 13.5px; font-weight: 700; color: var(--ink); }
 .amenity-icon-grid .sub { display: block; margin-top: 4px; font-family: var(--font-label); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); }
@@ -669,6 +669,7 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
   .hero-form-card { max-width: 460px; }
   .legacy-stats { grid-template-columns: repeat(2, 1fr); }
   .amenity-icon-grid { grid-template-columns: repeat(2, 1fr); }
+  .amenity-icon-grid > div { border-right: 1px solid var(--line); }
   .amenity-icon-grid > div:nth-child(-n+2) { border-top: none; }
   .amenity-icon-grid > div:nth-child(2n) { border-right: none; }
   .amenity-icon-grid > div:nth-child(n+3) { border-top: 1px solid var(--line); }
