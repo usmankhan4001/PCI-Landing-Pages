@@ -3,78 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Techno One Invite Exporter</title>
+<title>Techno One — Invite Generator</title>
 <meta name="description" content="Add a recipient name to the Techno One launch invitation and export it as PNG or JPG.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<!-- JSZip for bulk generation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
-<main class="app-shell">
-  <section class="panel editor-panel" aria-labelledby="editorTitle">
-    <div class="brand-header">
-      <p class="eyebrow">Techno One Launch</p>
-      <h1 id="editorTitle">Invite Generator</h1>
-      <p class="intro">Create a personalized digital invitation in seconds. Type the recipient's name below to generate a beautiful, print-ready image.</p>
-    </div>
 
-    <div class="mode-tabs">
-      <button type="button" class="tab-btn is-active" id="tabSingle">Single Name</button>
-      <button type="button" class="tab-btn" id="tabBulk">Bulk Generate</button>
-    </div>
+<header class="topbar">
+  <div class="topbar-brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+    <span>Invite Generator</span>
+  </div>
+  <div class="topbar-meta">Techno One Launch</div>
+</header>
 
-    <form class="invite-form" id="inviteForm">
-      <div id="singleModeFields">
-        <label class="field">
-          <span>Recipient Name</span>
-          <div class="input-wrapper">
-            <input id="recipientName" name="recipientName" type="text" placeholder="e.g. Mr. Ahmed Khan" autocomplete="name" autofocus>
-          </div>
-        </label>
+<main class="workspace">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-scroll">
+      <div class="sidebar-section">
+        <h2 class="sidebar-title">Recipient</h2>
+        <p class="sidebar-desc">Type a name to personalize the invitation.</p>
+      </div>
 
-        <div class="actions" aria-label="Export actions">
-          <button class="primary-btn" type="button" id="downloadPng">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Export PNG
-          </button>
-          <button class="secondary-btn" type="button" id="downloadJpg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Export JPG
-          </button>
+      <div class="sidebar-section">
+        <div class="mode-switch">
+          <button type="button" class="mode-btn is-active" id="tabSingle">Single</button>
+          <button type="button" class="mode-btn" id="tabBulk">Bulk</button>
+          <div class="mode-slider"></div>
         </div>
       </div>
 
-      <div id="bulkModeFields" style="display: none;">
-        <label class="field">
-          <span>Recipient Names (One per line)</span>
-          <div class="input-wrapper">
-            <textarea id="bulkNames" name="bulkNames" placeholder="Mr. Ahmed Khan&#10;Ms. Fatima Ali&#10;Dr. Kamran" rows="5"></textarea>
-          </div>
-          <p class="field-hint" style="margin:4px 0 0; font-size:12px; color:var(--muted); text-transform:none; font-weight:500;">Generates a ZIP file containing a JPG invite for each name.</p>
-        </label>
-
-        <div class="actions" aria-label="Export actions">
-          <button class="primary-btn" type="button" id="downloadBulk" style="grid-column: 1 / -1;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span id="bulkBtnText">Export ZIP</span>
-          </button>
-        </div>
+      <div class="sidebar-section" id="singleModeFields">
+        <label class="input-label" for="recipientName">Name</label>
+        <input id="recipientName" name="recipientName" type="text" placeholder="Mr. Ahmed Khan" autocomplete="name" autofocus>
       </div>
-    </form>
-  </section>
 
-  <section class="preview-panel" aria-labelledby="previewTitle">
-    <div class="preview-head">
-      <p class="eyebrow">Live Preview</p>
+      <div class="sidebar-section" id="bulkModeFields" style="display:none;">
+        <label class="input-label" for="bulkNames">Names — one per line</label>
+        <textarea id="bulkNames" name="bulkNames" placeholder="Mr. Ahmed Khan&#10;Ms. Fatima Ali&#10;Dr. Kamran" rows="6"></textarea>
+        <p class="input-hint">Each name produces one JPG. All files download as a ZIP.</p>
+      </div>
+
+      <div class="sidebar-actions" id="singleActions">
+        <button class="btn-export" type="button" id="downloadPng">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PNG
+        </button>
+        <button class="btn-export" type="button" id="downloadJpg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          JPG
+        </button>
+      </div>
+
+      <div class="sidebar-actions" id="bulkActions" style="display:none;">
+        <button class="btn-export btn-export--full" type="button" id="downloadBulk">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span id="bulkBtnText">Download ZIP</span>
+        </button>
+      </div>
     </div>
-    <div class="canvas-frame">
-      <canvas id="inviteCanvas" width="5244" height="7440" aria-label="Personalized Techno One invitation preview"></canvas>
-    </div>
+  </aside>
+
+  <section class="canvas-area" aria-label="Live preview">
+    <canvas id="inviteCanvas" width="5244" height="7440"></canvas>
   </section>
 </main>
+
 <script src="js/app.js"></script>
 </body>
 </html>

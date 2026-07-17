@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("inviteCanvas");
   const ctx = canvas.getContext("2d");
-  
-  // Single mode elements
+
   const nameInput = document.getElementById("recipientName");
   const downloadPng = document.getElementById("downloadPng");
   const downloadJpg = document.getElementById("downloadJpg");
-  
-  // Tabs & sections
+
   const tabSingle = document.getElementById("tabSingle");
   const tabBulk = document.getElementById("tabBulk");
   const singleModeFields = document.getElementById("singleModeFields");
   const bulkModeFields = document.getElementById("bulkModeFields");
-  
-  // Bulk mode elements
+  const singleActions = document.getElementById("singleActions");
+  const bulkActions = document.getElementById("bulkActions");
+  const modeSwitch = document.querySelector(".mode-switch");
+
   const bulkNames = document.getElementById("bulkNames");
   const downloadBulk = document.getElementById("downloadBulk");
   const bulkBtnText = document.getElementById("bulkBtnText");
@@ -33,13 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   artwork.src = "assets/realtor-invitation.jpeg";
 
-  // Tab Switching
   tabSingle.addEventListener("click", () => {
     currentMode = "single";
     tabSingle.classList.add("is-active");
     tabBulk.classList.remove("is-active");
-    singleModeFields.style.display = "block";
+    modeSwitch.classList.remove("bulk");
+    singleModeFields.style.display = "flex";
     bulkModeFields.style.display = "none";
+    singleActions.style.display = "flex";
+    bulkActions.style.display = "none";
     drawInvite();
   });
 
@@ -47,66 +49,66 @@ document.addEventListener("DOMContentLoaded", () => {
     currentMode = "bulk";
     tabBulk.classList.add("is-active");
     tabSingle.classList.remove("is-active");
+    modeSwitch.classList.add("bulk");
     singleModeFields.style.display = "none";
-    bulkModeFields.style.display = "block";
+    bulkModeFields.style.display = "flex";
+    singleActions.style.display = "none";
+    bulkActions.style.display = "flex";
     drawInvite();
   });
 
-  // Inputs trigger redraw
   nameInput.addEventListener("input", () => drawInvite());
   bulkNames.addEventListener("input", () => drawInvite());
 
-  // Single downloads
   downloadPng.addEventListener("click", () => downloadInvite("image/png", "png"));
   downloadJpg.addEventListener("click", () => downloadInvite("image/jpeg", "jpg"));
 
-  // Bulk download
   downloadBulk.addEventListener("click", async () => {
     const names = bulkNames.value.split('\n').map(n => n.trim()).filter(n => n.length > 0);
     if (names.length === 0) {
       alert("Please enter at least one name.");
       return;
     }
-    
+
     if (typeof JSZip === 'undefined') {
       alert("JSZip library failed to load. Please check your internet connection.");
       return;
     }
 
     const zip = new JSZip();
-    bulkBtnText.textContent = `Generating (0/${names.length})...`;
     downloadBulk.disabled = true;
+    bulkBtnText.textContent = `0 / ${names.length}`;
 
     try {
       for (let i = 0; i < names.length; i++) {
         const name = names[i];
-        bulkBtnText.textContent = `Generating (${i+1}/${names.length})...`;
+        bulkBtnText.textContent = `${i + 1} / ${names.length}`;
         drawInvite(name);
-        
+
         const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/jpeg", 0.98));
-        
+
         let safeName = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-        if (!safeName) safeName = `invite-${i+1}`;
-        
-        zip.file(`techno-one-invite-${safeName}.jpg`, blob);
+        if (!safeName) safeName = `invite-${i + 1}`;
+
+        zip.file(`${safeName}.jpg`, blob);
       }
-      
-      bulkBtnText.textContent = "Zipping files...";
+
+      bulkBtnText.textContent = "Compressing...";
       const zipBlob = await zip.generateAsync({ type: "blob" });
-      
+
       const url = URL.createObjectURL(zipBlob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `techno-one-bulk-invites.zip`;
+      link.download = "techno-one-invites.zip";
       document.body.appendChild(link);
       link.click();
       link.remove();
       URL.revokeObjectURL(url);
     } catch (e) {
       console.error(e);
-      alert("An error occurred during bulk generation.");
+      alert("An error occurred during generation.");
     } finally {
-      bulkBtnText.textContent = "Export ZIP";
+      bulkBtnText.textContent = "Download ZIP";
       downloadBulk.disabled = false;
       drawInvite();
     }
