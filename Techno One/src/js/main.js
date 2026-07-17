@@ -83,6 +83,25 @@ document.addEventListener("DOMContentLoaded", () => {
       b.setAttribute("aria-selected", String(isMatch));
       b.classList.toggle("is-active", isMatch);
     });
+
+    // Automatically open lead modal for this floor plan
+    const leadOverlay = document.getElementById("leadModalOverlay");
+    const modalTitle = document.getElementById("modalTitle");
+    const leadInterest = document.getElementById("leadInterest");
+    
+    if (leadOverlay && modalTitle) {
+      modalTitle.textContent = `Get ${f.title} Floor Plan`;
+      
+      // Auto-select dropdown based on floor type
+      if (leadInterest) {
+        if (f.type === "Retail") leadInterest.value = "Retail Shop";
+        else if (f.type === "Corporate Office") leadInterest.value = "Corporate Office";
+        else if (f.type === "F&B") leadInterest.value = "Rooftop Restaurant";
+      }
+      
+      leadOverlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
   }
   allFloorButtons.forEach((btn) => btn.addEventListener("click", () => selectFloor(btn.dataset.floor)));
 
