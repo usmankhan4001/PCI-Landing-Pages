@@ -534,34 +534,18 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
       <div class="stat is-price"><b>PKR 9M</b><span>Starting From</span></div>
     </div>
 
-    <div id="payment" class="payment-grid" style="padding-top: 40px; border-top: 1px solid var(--line);">
-      <div>
-        <h3 class="display" style="font-size: 22px; margin-bottom: 24px;">Payment Structure</h3>
-        <table class="stage-table">
-          <thead><tr><th>Payment Stage</th><th>Percentage</th><th>Timing</th></tr></thead>
-          <tbody>
-            <tr><td>Down Payment</td><td>30%</td><td>At booking</td></tr>
-            <tr><td>Installments</td><td>60%</td><td>24 equal monthly installments (2.5% / month)</td></tr>
-            <tr><td>Possession</td><td>10%</td><td>At handover</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <div class="custom-plan-inline" style="margin-top: 0; padding-top: 0; border-top: none;">
-          <h4 style="font-family:var(--font-label); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Customized Plan</h4>
-          <p>Need something different? Customize your down payment, installment size, duration or frequency.</p>
-          <div class="pref-chips">
-            <button type="button" class="pref-chip">Lower DP</button>
-            <button type="button" class="pref-chip">Lower Installment</button>
-            <button type="button" class="pref-chip">Extended Tenure</button>
-            <button type="button" class="pref-chip">Quarterly</button>
-            <button type="button" class="pref-chip">Unit-Specific</button>
-          </div>
-          <div style="display: flex; gap: 14px; margin-top: 24px;">
-            <button type="button" class="btn btn-primary" style="flex:1;" data-open-modal="leadModal" data-modal-title="Request Customized Payment Plan">Request Custom Plan</button>
-            <button type="button" class="btn btn-outline-dark" style="flex:1;" data-open-modal="leadModal" data-modal-title="Download Payment Plan">Download Standard Plan</button>
-          </div>
-        </div>
+    <div id="payment" style="padding-top: 40px; border-top: 1px solid var(--line);">
+      <h3 class="display" style="font-size: 22px; margin-bottom: 24px;">Payment Structure</h3>
+      <table class="stage-table">
+        <thead><tr><th>Payment Stage</th><th>Percentage</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Down Payment</td><td>30%</td><td>At booking</td></tr>
+          <tr><td>Installments</td><td>60%</td><td>24 equal monthly installments (2.5% / month)</td></tr>
+          <tr><td>Possession</td><td>10%</td><td>At handover</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top: 24px;">
+        <button type="button" class="btn btn-outline-dark" data-open-modal="leadModal" data-modal-title="Download Payment Plan">Download Payment Plan</button>
       </div>
     </div>
   </div>

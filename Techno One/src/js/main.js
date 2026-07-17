@@ -152,13 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------- Payment Customization Chips ---------- */
-  document.querySelectorAll(".pref-chip").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      chip.classList.toggle("is-active");
-    });
-  });
-
   /* ---------- Sticky mobile actions ---------- */
   const sticky = document.getElementById("stickyActions");
   const heroEl = document.querySelector(".hero");
@@ -179,8 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sticky.classList.toggle("is-collapsed", reachedFinal);
 
     if (inPayment) {
-      stickySecondary.textContent = "Request Custom Plan";
-      stickySecondary.dataset.modalTitle = "Request Customized Payment Plan";
+      stickySecondary.textContent = "Download Payment Plan";
+      stickySecondary.dataset.modalTitle = "Download Payment Plan";
     } else {
       stickySecondary.textContent = "Download Brochure";
       stickySecondary.dataset.modalTitle = "Download Brochure";
@@ -235,14 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = Object.fromEntries(new FormData(leadForm).entries());
     data.want = modalTitle.textContent;
     
-    // Append custom plan preferences if applicable
-    if (data.want === "Request Customized Payment Plan") {
-      const activeChips = Array.from(document.querySelectorAll(".pref-chip.is-active")).map(c => c.textContent);
-      if (activeChips.length > 0) {
-        data.want += ` (Preferences: ${activeChips.join(", ")})`;
-      }
-    }
-
     submitLead(data, document.getElementById("leadStatus"));
   });
 
