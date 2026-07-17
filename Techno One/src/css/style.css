@@ -818,80 +818,39 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
   }
 }
 
-/* "Techno One. A Smart Investment Decision" 4-column Rail Layout (Mimics Project Highlights) */
+/* "Techno One. A Smart Investment Decision" 4-column Rail (Mimics Project Highlights) */
 .investment-decision-section, .concept-section {
   display: block;
   width: 100%;
   clear: both;
 }
-.investment-rail {
-  display: grid;
+.highlight-rail-light.is-4col {
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  margin-top: 36px;
-  overflow: hidden;
   background: #fff;
 }
-.investment-rail > div {
-  padding: 32px 22px;
-  border-right: 1px solid var(--line);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.investment-rail > div:last-child {
-  border-right: none;
-}
-.investment-rail .ic {
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-.investment-rail .label {
-  font-size: 14px;
-  font-weight: 700;
-  display: block;
-  color: var(--ink);
-}
-.investment-rail .sub {
-  margin-top: 9px;
-  font-size: 12.5px;
-  font-weight: 500;
-  line-height: 1.55;
-  color: var(--muted);
-  flex: 1;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 @media (max-width: 1023px) {
-  .investment-rail {
+  .highlight-rail-light.is-4col {
     grid-template-columns: repeat(2, 1fr);
   }
-  .investment-rail > div {
+  .highlight-rail-light.is-4col > div {
     border-top: 1px solid var(--line);
   }
-  .investment-rail > div:nth-child(-n+2) {
+  .highlight-rail-light.is-4col > div:nth-child(-n+2) {
     border-top: none;
   }
-  .investment-rail > div:nth-child(2n) {
+  .highlight-rail-light.is-4col > div:nth-child(2n) {
     border-right: none;
   }
 }
 @media (max-width: 640px) {
-  .investment-rail {
+  .highlight-rail-light.is-4col {
     grid-template-columns: 1fr;
   }
-  .investment-rail > div {
+  .highlight-rail-light.is-4col > div {
     border-right: none;
-    padding: 26px 22px;
-  }
-  .investment-rail > div {
     border-top: 1px solid var(--line);
   }
-  .investment-rail > div:first-child {
+  .highlight-rail-light.is-4col > div:first-child {
     border-top: none;
   }
 }
