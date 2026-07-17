@@ -165,14 +165,32 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSticky();
 
   /* ---------- Forms ---------- */
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]+)"));
+    return match ? decodeURIComponent(match[1]) : undefined;
+  }
+
   async function submitLead(payload, statusEl) {
     statusEl.textContent = "Sending…";
     statusEl.className = "form-status is-visible";
+
+    const eventId = window.crypto && window.crypto.randomUUID ? window.crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
+    if (window.fbq && window.__fbPixelReady) {
+      window.fbq("track", "Lead", { content_name: "Techno One Lead Form" }, { eventID: eventId });
+    }
+
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, pageUrl: location.href, referrer: document.referrer }),
+        body: JSON.stringify({
+          ...payload,
+          pageUrl: location.href,
+          referrer: document.referrer,
+          eventId,
+          fbp: getCookie("_fbp"),
+          fbc: getCookie("_fbc"),
+        }),
       });
       if (!res.ok) throw new Error("Request failed");
       statusEl.textContent = "Thank you — continuing on WhatsApp.";

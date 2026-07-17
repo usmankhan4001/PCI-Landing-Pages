@@ -819,6 +819,11 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
 }
 
 /* Reason List Grid Style for About Section full-width content */
+.investor-benefits-section, .concept-section {
+  display: block;
+  width: 100%;
+  clear: both;
+}
 .reason-list-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

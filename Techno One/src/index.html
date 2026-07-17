@@ -9,6 +9,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
+  if (!cfg.pixelId) return;
+  fbq('init', cfg.pixelId);
+  fbq('track', 'PageView');
+  window.__fbPixelReady = true;
+}).catch(function(){});
+</script>
 </head>
 <body>
 
@@ -128,24 +142,22 @@
     <div class="opp-media opp-media-full">
       <img src="img/renders/hero-aerial.jpg" alt="Techno One rooftop terrace and building environment, aerial view">
     </div>
-    <div class="opp-row" style="margin-bottom: 0;">
-      <div style="grid-column: 1 / -1; width: 100%;">
-        <h4>Why This Matters to Investors</h4>
-        <ul class="reason-list-grid">
-          <li>
-            <b>DHA Phase 1 Scarcity</b>
-            <p>Commercial spaces are highly limited by design in DHA Phase 1, creating a natural supply barrier and ensuring long-term value retention.</p>
-          </li>
-          <li>
-            <b>High Rental Yields</b>
-            <p>Techno One offers diversified potential rental income streams across three distinct and high-demand commercial asset classes under one address.</p>
-          </li>
-          <li>
-            <b>Capital Appreciation</b>
-            <p>Positioned on Orchard Boulevard, this highly constrained premium corridor guarantees a strong upward capital appreciation trajectory.</p>
-          </li>
-        </ul>
-      </div>
+    <div class="investor-benefits-section" style="padding-top: 56px; border-top: 1px solid var(--line); margin-bottom: 56px; width: 100%;">
+      <h4 style="font-family: var(--font-label); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px;">Why This Matters to Investors</h4>
+      <ul class="reason-list-grid">
+        <li>
+          <b>DHA Phase 1 Scarcity</b>
+          <p>Commercial spaces are highly limited by design in DHA Phase 1, creating a natural supply barrier and ensuring long-term value retention.</p>
+        </li>
+        <li>
+          <b>High Rental Yields</b>
+          <p>Techno One offers diversified potential rental income streams across three distinct and high-demand commercial asset classes under one address.</p>
+        </li>
+        <li>
+          <b>Capital Appreciation</b>
+          <p>Positioned on Orchard Boulevard, this highly constrained premium corridor guarantees a strong upward capital appreciation trajectory.</p>
+        </li>
+      </ul>
     </div>
 
     <div class="concept-section" style="margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--line); width: 100%;">
