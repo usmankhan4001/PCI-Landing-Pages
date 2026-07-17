@@ -818,76 +818,81 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
   }
 }
 
-/* "Techno One. A Smart Investment Decision" 4-column Grid */
+/* "Techno One. A Smart Investment Decision" 4-column Rail Layout (Mimics Project Highlights) */
 .investment-decision-section, .concept-section {
   display: block;
   width: 100%;
   clear: both;
 }
-.investment-grid-4col {
+.investment-rail {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  margin-top: 36px;
-}
-.investment-card {
-  background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 30px 24px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.2s ease;
+  margin-top: 36px;
+  overflow: hidden;
+  background: #fff;
+}
+.investment-rail > div {
+  padding: 32px 22px;
+  border-right: 1px solid var(--line);
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
-.investment-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
-  border-color: rgba(40, 118, 167, 0.22);
+.investment-rail > div:last-child {
+  border-right: none;
 }
-.investment-card .ic-wrap {
-  background: var(--accent-tint);
+.investment-rail .ic {
   color: var(--accent);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  margin-bottom: 16px;
+}
+.investment-rail .label {
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  color: var(--ink);
+}
+.investment-rail .sub {
+  margin-top: 9px;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--muted);
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.investment-card .ic {
-  flex-shrink: 0;
-}
-.investment-card b {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.investment-card p {
-  font-size: 13.5px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
+  text-align: center;
 }
 
 @media (max-width: 1023px) {
-  .investment-grid-4col {
+  .investment-rail {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+  }
+  .investment-rail > div {
+    border-top: 1px solid var(--line);
+  }
+  .investment-rail > div:nth-child(-n+2) {
+    border-top: none;
+  }
+  .investment-rail > div:nth-child(2n) {
+    border-right: none;
   }
 }
 @media (max-width: 640px) {
-  .investment-grid-4col {
+  .investment-rail {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
-  .investment-card {
-    padding: 24px 20px;
+  .investment-rail > div {
+    border-right: none;
+    padding: 26px 22px;
+  }
+  .investment-rail > div {
+    border-top: 1px solid var(--line);
+  }
+  .investment-rail > div:first-child {
+    border-top: none;
   }
 }
 
