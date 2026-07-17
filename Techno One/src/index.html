@@ -501,19 +501,28 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
       <button class="tab-btn" data-tab="offices" aria-selected="false">Offices (2nd–4th)</button>
     </div>
 
-    <div class="table-wrap">
+    <div class="table-wrap" id="pricing-retail">
       <table class="pricing">
         <thead>
-          <tr><th>Category</th><th>Floor</th><th>Rate / Sq. Ft.</th><th>Area (Sq. Ft.)</th><th>Price Range (PKR)</th></tr>
+          <tr><th>Floor</th><th>Area (Sq. Ft.)</th><th>Price Range (PKR)</th></tr>
         </thead>
         <tbody>
-          <tr><td class="cat">Retail</td><td>Lower Ground</td><td>50,000</td><td>678 – 968</td><td class="price">33,883,000 – 48,421,000</td></tr>
-          <tr><td class="cat">Retail</td><td>Ground Floor</td><td>89,000</td><td>625 – 784</td><td class="price">55,642,000 – 69,740,000</td></tr>
-          <tr><td class="cat">Retail</td><td>Mezzanine</td><td>52,500 – 55,000</td><td>337 – 591</td><td class="price">17,707,000 – 32,479,000</td></tr>
-          <tr><td class="cat">Retail</td><td>1st Floor</td><td>45,000 – 47,500</td><td>337 – 591</td><td class="price">15,177,000 – 28,050,000</td></tr>
-          <tr><td class="cat">Office</td><td>2nd Floor</td><td>40,000 – 42,500</td><td>337 – 591</td><td class="price">13,491,000 – 25,097,000</td></tr>
-          <tr><td class="cat">Office</td><td>3rd Floor</td><td>27,500 – 29,000</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
-          <tr><td class="cat">Office</td><td>4th Floor</td><td>27,500 – 29,000</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
+          <tr><td>Lower Ground</td><td>678 – 968</td><td class="price">33,883,000 – 48,421,000</td></tr>
+          <tr><td>Ground Floor</td><td>625 – 784</td><td class="price">55,642,000 – 69,740,000</td></tr>
+          <tr><td>Mezzanine</td><td>337 – 591</td><td class="price">17,707,000 – 32,479,000</td></tr>
+          <tr><td>1st Floor</td><td>337 – 591</td><td class="price">15,177,000 – 28,050,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap" id="pricing-offices" hidden>
+      <table class="pricing">
+        <thead>
+          <tr><th>Floor</th><th>Area (Sq. Ft.)</th><th>Price Range (PKR)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2nd Floor</td><td>337 – 591</td><td class="price">13,491,000 – 25,097,000</td></tr>
+          <tr><td>3rd Floor</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
+          <tr><td>4th Floor</td><td>337 – 591</td><td class="price">9,275,000 – 17,125,000</td></tr>
         </tbody>
       </table>
     </div>

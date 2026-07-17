@@ -129,9 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
   landmarkChips.forEach((chip) => chip.addEventListener("click", () => selectPin(chip.dataset.pin)));
 
   /* ---------- Payment tabs (visual — same placeholder data for all categories) ---------- */
+  const retailTable = document.getElementById("pricing-retail");
+  const officesTable = document.getElementById("pricing-offices");
   document.querySelectorAll(".tab-btn").forEach((tab) => {
     tab.addEventListener("click", () => {
       document.querySelectorAll(".tab-btn").forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      const tabId = tab.dataset.tab;
+      if (retailTable && officesTable) {
+        retailTable.hidden = tabId !== "retail";
+        officesTable.hidden = tabId !== "offices";
+      }
     });
   });
 
