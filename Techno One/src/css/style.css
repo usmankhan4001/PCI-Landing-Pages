@@ -818,30 +818,77 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
   }
 }
 
-/* Reason List Grid Style for About Section full-width content */
-.investor-benefits-section, .concept-section {
+/* "Techno One. A Smart Investment Decision" 4-column Grid */
+.investment-decision-section, .concept-section {
   display: block;
   width: 100%;
   clear: both;
 }
-.reason-list-grid {
+.investment-grid-4col {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 36px;
 }
-.reason-list-grid li {
-  padding: 0;
-  font-size: 14.5px;
-  color: var(--muted);
-  line-height: 1.6;
+.investment-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.reason-list-grid b {
+.investment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(40, 118, 167, 0.22);
+}
+.investment-card .ic-wrap {
+  background: var(--accent-tint);
+  color: var(--accent);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.investment-card .ic {
+  flex-shrink: 0;
+}
+.investment-card b {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.investment-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .investment-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .investment-grid-4col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .investment-card {
+    padding: 24px 20px;
+  }
 }
 
 /* Specificity override for the hero form submit button to guarantee it is always filled & highlighted */
@@ -855,11 +902,4 @@ table.pricing td.price { font-weight: 700; color: var(--ink); font-variant-numer
   color: #fff !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 20px rgba(40, 118, 167, 0.4) !important;
-}
-
-@media (max-width: 1023px) {
-  .reason-list-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
 }

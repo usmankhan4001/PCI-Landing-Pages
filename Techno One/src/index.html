@@ -70,6 +70,7 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
   <div class="wrap hero-content">
     <div class="hero-grid">
       <div class="hero-text">
+        <img src="img/logo/techno-one-logo-white.png" alt="Techno One Logo" class="hero-brand-logo" style="height: clamp(40px, 5vw, 54px); width: auto; margin-bottom: 20px; display: block;">
         <div class="hero-kicker">Premier Choice International — DHA Phase 1, Islamabad</div>
         <h1 class="display">Some Buildings Are Occupied.<br><span class="accent">Few Are Remembered.</span></h1>
         <p class="lead">Techno One is DHA Phase 1's next commercial landmark — retail, offices and rooftop dining under one address. Built for the businesses of tomorrow.</p>
@@ -142,25 +143,7 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
     <div class="opp-media opp-media-full">
       <img src="img/renders/hero-aerial.jpg" alt="Techno One rooftop terrace and building environment, aerial view">
     </div>
-    <div class="investor-benefits-section" style="padding-top: 56px; border-top: 1px solid var(--line); margin-bottom: 56px; width: 100%;">
-      <h4 style="font-family: var(--font-label); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px;">Why This Matters to Investors</h4>
-      <ul class="reason-list-grid">
-        <li>
-          <b>DHA Phase 1 Scarcity</b>
-          <p>Commercial spaces are highly limited by design in DHA Phase 1, creating a natural supply barrier and ensuring long-term value retention.</p>
-        </li>
-        <li>
-          <b>High Rental Yields</b>
-          <p>Techno One offers diversified potential rental income streams across three distinct and high-demand commercial asset classes under one address.</p>
-        </li>
-        <li>
-          <b>Capital Appreciation</b>
-          <p>Positioned on Orchard Boulevard, this highly constrained premium corridor guarantees a strong upward capital appreciation trajectory.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="concept-section" style="margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--line); width: 100%;">
+    <div class="concept-section" style="padding-top: 56px; border-top: 1px solid var(--line); width: 100%;">
       <h4 style="font-family: var(--font-label); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px;">Commercial Concept</h4>
       <div class="asset-cards">
         <div class="asset-card">
@@ -207,6 +190,66 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
         </div>
       </div>
     </div>
+
+    <!-- ================= INVESTMENT DECISION SECTION ================= -->
+    <div class="investment-decision-section" style="margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--line); width: 100%;">
+      <h4 style="font-family: var(--font-label); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Investment Advantage</h4>
+      <h3 class="display" style="font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 12px;">Techno One. A Smart Investment Decision</h3>
+      <p class="body-copy" style="margin-bottom: 32px; max-width: 64ch;">Positioned for maximum commercial viability and built by a developer with a 20+ year record of uncompromising delivery quality.</p>
+      
+      <div class="investment-grid-4col">
+        <!-- Card 1 -->
+        <div class="investment-card">
+          <div class="ic-wrap">
+            <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <b>Early Investment Advantage</b>
+          <p>Invest during active construction while benefiting from launch-stage pricing and maximum capital appreciation potential.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="investment-card">
+          <div class="ic-wrap">
+            <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <b>Prime Commercial Location</b>
+          <p>Positioned on Main Link Road in DHA Phase 1, at the centre of a rapidly growing and highly accessible commercial district.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="investment-card">
+          <div class="ic-wrap">
+            <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9" rx="1" />
+              <rect x="14" y="3" width="7" height="5" rx="1" />
+              <rect x="14" y="12" width="7" height="9" rx="1" />
+              <rect x="3" y="16" width="7" height="5" rx="1" />
+            </svg>
+          </div>
+          <b>Long-Term Growth Potential</b>
+          <p>Expertly designed to support sustained corporate business demand, high foot traffic, and long-term asset value appreciation.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="investment-card">
+          <div class="ic-wrap">
+            <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+            </svg>
+          </div>
+          <b>Multiple Revenue Opportunities</b>
+          <p>A premium mixed-use development combining high-yield retail, modern offices, and a signature rooftop restaurant within one destination.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 <!-- ================= LOCATION SUB-SECTION ================= -->
@@ -217,7 +260,7 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
           <div class="eyebrow"><span class="idx">—</span> Location</div>
           <h2 class="display">Minutes From <span class="accent">Everything That Matters</span></h2>
         </div>
-        <p class="body-copy"><em>"Some addresses are found. This one was chosen."</em> Techno One sits directly on Main MLR Road, DHA Phase 1 — in the same neighbourhood as other Premier Choice developments.</p>
+        <p class="body-copy">Positioned on Main Link Road in DHA Phase 1, Techno One keeps businesses connected to the people, places, and opportunities that matter most.</p>
       </div>
     </div>
 
@@ -307,9 +350,9 @@ fetch('/api/config').then(function(r){ return r.json(); }).then(function(cfg){
           <img src="img/renders/rooftop-terrace-dining.png" alt="Techno One rooftop restaurant terrace at dusk, DHA Phase 1 Islamabad">
         </div>
         <div class="copy">
-          <div class="eyebrow"><span class="idx">—</span> Featured Amenity</div>
-          <h3 class="display" style="margin-top:14px;">Rooftop. The Crown.</h3>
-          <p class="body-copy" style="margin-top:12px;">An invitation to dine well. Created for business lunches, casual meetings, everyday dining and social gatherings — it welcomes everyone, from the professionals who work here to the visitors who make it part of their day.</p>
+          <div class="eyebrow" style="line-height: 1.4;"><span class="idx">—</span> A Signature Rooftop Destination for Distinguished Dining Brands</div>
+          <h3 class="display" style="margin-top:14px; font-weight:700;">Rooftop · The Crown</h3>
+          <p class="body-copy" style="margin-top:12px;">The rooftop restaurant adds another dimension to Techno One. Created for business lunches, casual meetings, everyday dining, and social gatherings, it welcomes everyone, from the professionals who make it their workplace to the visitors who make it part of their day.</p>
           <div class="strip">2,500 Sq.Ft. Restaurant · Business &amp; Social Dining · Rooftop Level</div>
         </div>
       </div>
