@@ -14,14 +14,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const bulkActions = document.getElementById("bulkActions");
   const modeSwitch = document.querySelector(".mode-switch");
 
+  const tabRealtor = document.getElementById("tabRealtor");
+  const tabClient = document.getElementById("tabClient");
+  const inviteTypeSwitch = document.querySelector(".invite-type-switch");
+
   const bulkNames = document.getElementById("bulkNames");
   const downloadBulk = document.getElementById("downloadBulk");
   const bulkBtnText = document.getElementById("bulkBtnText");
 
   let currentMode = "single";
+  let currentType = "realtor";
 
-  const artwork = new Image();
-  artwork.onload = async () => {
+  const images = {
+    realtor: { src: "assets/realtor-invitation.jpeg", img: new Image(), loaded: false },
+    client: { src: "assets/client-invitation.jpeg", img: new Image(), loaded: false }
+  };
+
+  const nameConfig = {
+    x: 2055,
+    y: 1035,
+    maxWidth: 2280,
+    startFontSize: 142,
+    minFontSize: 88
+  };
+
+  let fontsReady = false;
+
+  async function loadFonts() {
     try {
       if (document.fonts) {
         await document.fonts.load('800 142px Montserrat');
@@ -29,9 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
       console.warn('Font loading error:', e);
     }
+    fontsReady = true;
+  }
+
+  function onImageLoaded() {
+    if (images.realtor.loaded && images.client.loaded && fontsReady) {
+      drawInvite();
+    }
+  }
+
+  loadFonts().then(() => {
+    images.realtor.img.onload = () => { images.realtor.loaded = true; onImageLoaded(); };
+    images.client.img.onload = () => { images.client.loaded = true; onImageLoaded(); };
+    images.realtor.img.src = images.realtor.src;
+    images.client.img.src = images.client.src;
+  });
+
+  tabRealtor.addEventListener("click", () => {
+    currentType = "realtor";
+    tabRealtor.classList.add("is-active");
+    tabClient.classList.remove("is-active");
+    inviteTypeSwitch.classList.remove("client");
     drawInvite();
-  };
-  artwork.src = "assets/realtor-invitation.jpeg";
+  });
+
+  tabClient.addEventListener("click", () => {
+    currentType = "client";
+    tabClient.classList.add("is-active");
+    tabRealtor.classList.remove("is-active");
+    inviteTypeSwitch.classList.add("client");
+    drawInvite();
+  });
 
   tabSingle.addEventListener("click", () => {
     currentMode = "single";
@@ -99,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const url = URL.createObjectURL(zipBlob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "techno-one-invites.zip";
+      link.download = `techno-one-${currentType}-invites.zip`;
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -127,6 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    const artwork = images[currentType].img;
+    if (!images[currentType].loaded) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(artwork, 0, 0, canvas.width, canvas.height);
 
@@ -140,15 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.shadowBlur = 24;
     ctx.shadowOffsetY = 6;
 
-    const x = 2055;
-    const y = 1035;
-    const maxWidth = 2280;
-    let fontSize = 142;
+    const { x, y, maxWidth, startFontSize, minFontSize } = nameConfig;
+    let fontSize = startFontSize;
 
     do {
       ctx.font = `800 ${fontSize}px Montserrat, Arial, sans-serif`;
       fontSize -= 2;
-    } while (ctx.measureText(recipient).width > maxWidth && fontSize > 88);
+    } while (ctx.measureText(recipient).width > maxWidth && fontSize > minFontSize);
 
     ctx.fillText(recipient, x, y, maxWidth);
     ctx.restore();
@@ -165,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `techno-one-invite-${safeName || "recipient"}.${extension}`;
+      link.download = `techno-one-${currentType}-invite-${safeName || "recipient"}.${extension}`;
       document.body.appendChild(link);
       link.click();
       link.remove();
