@@ -30,12 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     client: { src: "assets/client-invitation.jpeg", img: new Image(), loaded: false }
   };
 
-  const nameConfig = {
-    x: 2055,
-    y: 1035,
-    maxWidth: 2280,
-    startFontSize: 142,
-    minFontSize: 88
+  const nameConfigs = {
+    realtor: { x: 2055, y: 1035, maxWidth: 2280, startFontSize: 142, minFontSize: 88 },
+    client:  { x: 2055, y: 1200, maxWidth: 2280, startFontSize: 142, minFontSize: 88 }
   };
 
   let fontsReady = false;
@@ -190,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.shadowBlur = 24;
     ctx.shadowOffsetY = 6;
 
-    const { x, y, maxWidth, startFontSize, minFontSize } = nameConfig;
+    const { x, y, maxWidth, startFontSize, minFontSize } = nameConfigs[currentType];
     let fontSize = startFontSize;
 
     do {
