@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const nameConfigs = {
     realtor: { x: 2055, y: 1035, maxWidth: 2280, startFontSize: 142, minFontSize: 88 },
-    client:  { x: 2055, y: 1600, maxWidth: 2280, startFontSize: 142, minFontSize: 88 }
+    client:  { x: 2045, y: 1236, maxWidth: 2280, startFontSize: 142, minFontSize: 88 }
   };
 
   let fontsReady = false;
