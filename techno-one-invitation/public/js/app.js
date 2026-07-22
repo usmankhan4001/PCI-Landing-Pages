@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function onImageLoaded() {
-    if (images.realtor.loaded && images.client.loaded && fontsReady) {
+    if (images[currentType].loaded && fontsReady) {
       drawInvite();
     }
   }

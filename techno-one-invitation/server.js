@@ -11,7 +11,14 @@ app.use((_req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1d' }));
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: 0,
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html') || path.endsWith('.js') || path.endsWith('.css')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }
+}));
 
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
